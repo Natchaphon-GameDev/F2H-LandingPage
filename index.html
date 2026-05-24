@@ -1,0 +1,1817 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Farm to Table House @ Khao Yai</title>
+    <meta name="description" content="โฮมสเตย์เขาใหญ่ หนีเมือง มาพักใจกลางธรรมชาติ · วิวภูเขา อากาศบริสุทธิ์ ครัวครบ ⭐ 4.92 บน Airbnb">
+
+    <!-- Open Graph -->
+    <meta property="og:type"        content="website">
+    <meta property="og:url"         content="https://natchaphon-gamedev.github.io/F2H-LandingPage/">
+    <meta property="og:title"       content="Farm to Table House @ Khao Yai">
+    <meta property="og:description" content="โฮมสเตย์เขาใหญ่ หนีเมือง มาพักใจกลางธรรมชาติ · วิวภูเขา อากาศบริสุทธิ์ ครัวครบ ⭐ 4.92 บน Airbnb">
+    <meta property="og:image"       content="https://natchaphon-gamedev.github.io/F2H-LandingPage/images/01.jpeg">
+    <meta property="og:image:alt"   content="Farm to Table House — วิวภูเขาเขาใหญ่">
+    <meta property="og:locale"      content="th_TH">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card"        content="summary_large_image">
+    <meta name="twitter:title"       content="Farm to Table House @ Khao Yai">
+    <meta name="twitter:description" content="โฮมสเตย์เขาใหญ่ หนีเมือง มาพักใจกลางธรรมชาติ · วิวภูเขา อากาศบริสุทธิ์ ครัวครบ ⭐ 4.92 บน Airbnb">
+    <meta name="twitter:image"       content="https://natchaphon-gamedev.github.io/F2H-LandingPage/images/01.jpeg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;300&family=Prompt:wght@200;300&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --white:       #ffffff;
+            --off-white:   #f5f5f7;
+            --dark:        #1d1d1f;
+            --gray:        #6e6e73;
+            --green:       #2d6a4f;
+            --green-mid:   #40916c;
+            --green-light: #74c69d;
+            --gold:        #f4c542;
+            --font:        -apple-system, BlinkMacSystemFont, "SF Pro Display", "Helvetica Neue", Arial, sans-serif;
+            --ease:        cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            --radius:      20px;
+            --shadow:      0 4px 40px rgba(0,0,0,0.08);
+            --shadow-lg:   0 20px 60px rgba(0,0,0,0.15);
+        }
+        html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
+        body { font-family: var(--font); background: var(--white); color: var(--dark); overflow-x: hidden; }
+
+        /* ── NAV ── */
+        .nav {
+            position: fixed; top: 0; left: 0; right: 0; z-index: 200;
+            height: 52px; padding: 0 28px;
+            display: flex; align-items: center; justify-content: space-between;
+            transition: background 0.4s var(--ease), border-color 0.4s var(--ease);
+            backdrop-filter: blur(20px) saturate(180%);
+            -webkit-backdrop-filter: blur(20px) saturate(180%);
+            background: rgba(255,255,255,0.85);
+            border-bottom: 1px solid rgba(0,0,0,0.07);
+        }
+        .nav.over-hero { background: rgba(0,0,0,0.35); border-bottom-color: rgba(255,255,255,0.1); }
+        .nav-logo { font-size: 15px; font-weight: 700; text-decoration: none; color: var(--dark); letter-spacing: -0.3px; }
+        .nav.over-hero .nav-logo { color: white; text-shadow: 0 1px 6px rgba(0,0,0,0.55); }
+        .nav-logo em { font-style: normal; color: var(--green); }
+        .nav.over-hero .nav-logo em { color: #a8e6a3; text-shadow: 0 1px 6px rgba(0,0,0,0.55); }
+        .nav-right { display: flex; align-items: center; gap: 16px; }
+
+        /* Lang switcher */
+        .lang-switcher {
+            display: flex; align-items: center; gap: 4px;
+            background: rgba(0,0,0,0.06); border-radius: 980px; padding: 4px;
+            transition: background 0.4s;
+        }
+        .nav.over-hero .lang-switcher { background: rgba(255,255,255,0.12); }
+        .lang-btn {
+            font-size: 12px; font-weight: 600; letter-spacing: 0.3px;
+            padding: 5px 14px; border: none; cursor: pointer;
+            border-radius: 980px; background: transparent;
+            color: var(--gray); transition: all 0.2s var(--ease);
+            font-family: var(--font);
+        }
+        .nav.over-hero .lang-btn { color: rgba(255,255,255,0.55); }
+        .lang-btn.active {
+            background: white; color: var(--dark);
+            box-shadow: 0 1px 6px rgba(0,0,0,0.14);
+        }
+        .nav.over-hero .lang-btn.active { background: white; color: var(--dark); }
+        .lang-btn:hover:not(.active) { color: var(--dark); }
+        .nav.over-hero .lang-btn:hover:not(.active) { color: white; }
+
+        /* Mobile lang dropdown */
+        .lang-dropdown { display: none; position: relative; }
+        .lang-dd-btn {
+            display: flex; align-items: center; gap: 5px;
+            font-size: 13px; font-weight: 600; font-family: var(--font);
+            padding: 6px 12px; border: none; cursor: pointer;
+            border-radius: 980px; background: rgba(0,0,0,0.06);
+            color: var(--dark); transition: background 0.2s;
+        }
+        .nav.over-hero .lang-dd-btn { background: rgba(255,255,255,0.15); color: white; }
+        .lang-dd-btn svg { transition: transform 0.2s; }
+        .lang-dropdown.open .lang-dd-btn svg { transform: rotate(180deg); }
+        .lang-dd-menu {
+            display: none; position: absolute; top: calc(100% + 8px); right: 0;
+            background: white; border-radius: 14px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.14); overflow: hidden;
+            min-width: 130px; z-index: 300;
+        }
+        .lang-dropdown.open .lang-dd-menu { display: block; }
+        .lang-dd-menu button {
+            display: block; width: 100%; text-align: left;
+            padding: 12px 16px; border: none; background: transparent;
+            font-size: 13px; font-weight: 500; font-family: var(--font);
+            color: var(--dark); cursor: pointer; transition: background 0.15s;
+        }
+        .lang-dd-menu button:hover { background: rgba(0,0,0,0.05); }
+        .lang-dd-menu button.active { font-weight: 700; color: var(--green); }
+
+        .nav-contact {
+            font-size: 13px; font-weight: 500; text-decoration: none;
+            color: var(--gray); padding: 7px 14px; border-radius: 980px;
+            transition: color 0.2s; white-space: nowrap;
+        }
+        .nav-contact:hover { color: var(--dark); }
+        .nav.over-hero .nav-contact { color: rgba(255,255,255,0.7); }
+        .nav.over-hero .nav-contact:hover { color: white; }
+
+        .nav-book {
+            font-size: 13px; font-weight: 500; text-decoration: none;
+            background: var(--green); color: white;
+            padding: 7px 18px; border-radius: 980px;
+            transition: background 0.25s, transform 0.25s; white-space: nowrap;
+        }
+        .nav-book:hover { background: var(--green-mid); transform: scale(1.04); }
+
+        /* ── HERO ── */
+        .hero {
+            height: 100svh; min-height: 620px; position: relative;
+            display: flex; flex-direction: column; align-items: flex-start; justify-content: center;
+            overflow: hidden;
+        }
+        .hero-bg {
+            position: absolute; inset: 0;
+            background: linear-gradient(160deg, #071a0e 0%, #0d2b1a 25%, #1b4332 55%, #2d6a4f 80%, #52b788 100%);
+        }
+        .hero-img { position: absolute; inset: 0; z-index: 1; width: 100%; height: 100%; object-fit: cover; }
+        .hero-overlay { position: absolute; inset: 0; z-index: 2; background: linear-gradient(to bottom right, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.35) 100%); }
+        .hero-content { position: relative; z-index: 3; padding: 0 clamp(28px, 6vw, 72px); max-width: min(960px, 96vw); width: 100%; }
+        .hero-badge {
+            display: inline-flex; align-items: center; gap: 7px;
+            background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.22);
+            backdrop-filter: blur(12px); color: white; font-size: 13px; font-weight: 500;
+            padding: 6px 16px; border-radius: 980px; margin-bottom: 28px;
+        }
+        .hero-badge .star { color: var(--gold); }
+
+        /* Editorial title */
+        .hero-editorial {
+            font-family: 'Nunito', -apple-system, sans-serif;
+            font-weight: 200;
+            color: white;
+            line-height: 0.9;
+            letter-spacing: -0.02em;
+            margin-bottom: 36px;
+        }
+        .ht-line1 { display: flex; align-items: baseline; gap: 0.08em; }
+        .ht-farm  { font-size: clamp(68px, 11.5vw, 148px); }
+        .ht-to    { font-size: clamp(52px, 8.8vw, 114px); color: var(--green-light); }
+        .ht-thai  {
+            font-family: 'Prompt', sans-serif; font-weight: 200;
+            display: flex; flex-direction: column; gap: 2px;
+            margin: 14px 0 10px; line-height: 1.25; letter-spacing: 0.01em;
+        }
+        .ht-thai-main { font-size: clamp(22px, 3.6vw, 46px); }
+        .ht-thai-sub  { font-size: clamp(13px, 2vw, 26px); color: rgba(255,255,255,0.68); }
+        .ht-table { font-size: clamp(68px, 11.5vw, 148px); display: block; line-height: 0.88; }
+        .ht-house { font-size: clamp(68px, 11.5vw, 148px); display: block; line-height: 0.88; color: var(--green-light); }
+
+        .hero-cta {
+            display: inline-flex; align-items: center; gap: 9px;
+            background: white; color: var(--dark); padding: 16px 34px; border-radius: 980px;
+            text-decoration: none; font-size: 17px; font-weight: 600;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.35);
+            transition: transform 0.3s var(--ease), box-shadow 0.3s var(--ease);
+        }
+        .hero-cta:hover { transform: translateY(-3px) scale(1.03); box-shadow: 0 18px 55px rgba(0,0,0,0.45); }
+        .hero-scroll {
+            position: absolute; bottom: 36px; left: 50%; transform: translateX(-50%);
+            z-index: 3; color: rgba(255,255,255,0.45); font-size: 11px;
+            letter-spacing: 2.5px; text-transform: uppercase;
+            display: flex; flex-direction: column; align-items: center; gap: 6px;
+            animation: bob 2.4s ease-in-out infinite;
+        }
+        @keyframes bob { 0%,100%{transform:translateX(-50%) translateY(0)} 50%{transform:translateX(-50%) translateY(9px)} }
+
+        /* ── STATS ── */
+        .stats-bar { background: var(--dark); padding: 44px 24px; }
+        .stats-inner { max-width: 900px; margin: 0 auto; display: grid; grid-template-columns: repeat(4, 1fr); }
+        .stat { padding: 28px 16px; text-align: center; border-right: 1px solid rgba(255,255,255,0.08); }
+        .stat:last-child { border-right: none; }
+        .stat-num { font-size: clamp(38px, 5.5vw, 58px); font-weight: 700; color: white; letter-spacing: -2.5px; line-height: 1; }
+        .stat-num sup { font-size: 0.4em; font-weight: 400; color: var(--green-light); vertical-align: super; }
+        .stat-lbl { font-size: 13px; color: rgba(255,255,255,0.42); margin-top: 6px; }
+
+        /* ── SHARED ── */
+        .section { padding: 72px 24px; }
+        .s-inner { max-width: 980px; margin: 0 auto; }
+        .eyebrow { font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: 2px; color: var(--green); margin-bottom: 10px; }
+        .eyebrow.lite { color: var(--green-light); }
+        .s-title { font-size: clamp(34px, 5.5vw, 58px); font-weight: 700; letter-spacing: -1.8px; line-height: 1.06; margin-bottom: 14px; }
+        .s-title.white { color: white; }
+        .s-sub { font-size: 19px; color: var(--gray); line-height: 1.6; max-width: 560px; }
+        .s-sub.white { color: rgba(255,255,255,0.55); }
+
+        /* ── HIGHLIGHTS ── */
+        .highlights { background: var(--off-white); }
+        .hl-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 64px; }
+        .hl-card { background: white; border-radius: var(--radius); padding: 38px 30px; box-shadow: var(--shadow); transition: transform 0.35s var(--ease), box-shadow 0.35s var(--ease); }
+        .hl-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-lg); }
+        .hl-icon { width: 54px; height: 54px; border-radius: 15px; background: linear-gradient(135deg, var(--green), var(--green-light)); display: flex; align-items: center; justify-content: center; font-size: 26px; margin-bottom: 22px; }
+        .hl-name { font-size: 21px; font-weight: 600; margin-bottom: 9px; }
+        .hl-desc { font-size: 15px; color: var(--gray); line-height: 1.65; }
+
+        /* ── GALLERY ── */
+        .gallery { background: var(--white); padding: 72px 0; }
+        .gallery .s-inner { padding: 0 24px; }
+        .gallery-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; grid-template-rows: 300px 300px; gap: 10px; margin-top: 56px; border-radius: calc(var(--radius) + 4px); overflow: hidden; }
+        .g-item { position: relative; overflow: hidden; transition: filter 0.35s; }
+        .g-item:hover { filter: brightness(1.07); }
+        .g-item:first-child { grid-row: span 2; }
+
+        /* ── ABOUT ── */
+        .about { background: var(--dark); }
+        .about-inner { max-width: 980px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+        .feat-list { list-style: none; margin-top: 36px; }
+        .feat-list li { display: flex; align-items: center; gap: 14px; font-size: 17px; color: rgba(255,255,255,0.78); padding: 13px 0; border-bottom: 1px solid rgba(255,255,255,0.07); }
+        .feat-list li:last-child { border-bottom: none; }
+        .feat-list .fi { font-size: 22px; flex-shrink: 0; }
+
+        /* ── AMENITIES ── */
+        .amenities { background: var(--off-white); }
+        .am-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-top: 60px; }
+        .am-item { background: white; border-radius: 16px; padding: 26px 18px; display: flex; flex-direction: column; align-items: center; gap: 11px; text-align: center; box-shadow: 0 2px 12px rgba(0,0,0,0.05); transition: transform 0.3s var(--ease), box-shadow 0.3s var(--ease); }
+        .am-item:hover { transform: translateY(-3px); box-shadow: var(--shadow); }
+        .am-icon { font-size: 30px; }
+        .am-name { font-size: 13px; font-weight: 500; color: var(--dark); }
+
+        /* ── PRICING ── */
+        .pricing { background: var(--dark); }
+        .pricing-wrap { max-width: 980px; margin: 0 auto; text-align: center; }
+        .price-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 64px; }
+        .pc { border-radius: 28px; padding: 54px 44px; position: relative; overflow: hidden; transition: transform 0.4s var(--ease); }
+        .pc:hover { transform: translateY(-8px); }
+        .pc.weekday { background: rgba(255,255,255,0.055); border: 1px solid rgba(255,255,255,0.1); }
+        .pc.weekend { background: linear-gradient(140deg, #1b4332 0%, #2d6a4f 50%, #40916c 100%); box-shadow: 0 24px 70px rgba(45,106,79,0.45); }
+        .pc.weekend::before { content:''; position:absolute; inset:0; background:radial-gradient(ellipse at 70% 20%, rgba(116,198,157,0.25) 0%, transparent 60%); }
+        .pc-badge { position: absolute; top: 22px; right: 22px; background: rgba(255,255,255,0.18); backdrop-filter: blur(8px); color: white; font-size: 11px; font-weight: 700; padding: 4px 13px; border-radius: 980px; letter-spacing: 1.2px; text-transform: uppercase; }
+        .pc-type { font-size: 13px; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; margin-bottom: 24px; }
+        .pc.weekday .pc-type { color: rgba(255,255,255,0.42); }
+        .pc.weekend .pc-type { color: rgba(255,255,255,0.75); }
+        .pc-price { display: flex; align-items: flex-start; justify-content: center; gap: 3px; }
+        .pc-cur { font-size: 30px; font-weight: 500; color: white; padding-top: 14px; line-height: 1; }
+        .pc-num { font-size: clamp(68px, 11vw, 104px); font-weight: 700; color: white; letter-spacing: -5px; line-height: 1; }
+        .pc-per { font-size: 16px; color: rgba(255,255,255,0.48); margin-top: 10px; line-height: 1.4; }
+        .pc.weekend .pc-per { color: rgba(255,255,255,0.68); }
+        .pc-divider { height: 1px; background: rgba(255,255,255,0.1); margin: 32px 0; }
+        .pc-includes { list-style: none; }
+        .pc-includes li { font-size: 15px; color: rgba(255,255,255,0.6); padding: 7px 0; display: flex; align-items: center; justify-content: center; gap: 9px; }
+        .pc.weekend .pc-includes li { color: rgba(255,255,255,0.82); }
+        .pc-includes .check { color: var(--green-light); font-size: 17px; }
+        .pc.weekend .pc-includes .check { color: white; }
+        .price-note { margin-top: 44px; font-size: 14px; color: rgba(255,255,255,0.28); }
+        .price-cta-wrap { margin-top: 52px; }
+        .price-cta { display: inline-flex; align-items: center; gap: 10px; background: white; color: var(--dark); padding: 17px 40px; border-radius: 980px; text-decoration: none; font-size: 17px; font-weight: 600; box-shadow: 0 10px 40px rgba(0,0,0,0.35); transition: transform 0.3s var(--ease), box-shadow 0.3s var(--ease); }
+        .price-cta:hover { transform: translateY(-3px) scale(1.03); box-shadow: 0 18px 55px rgba(0,0,0,0.45); }
+
+        /* ── MEDIA / PRESS ── */
+        .media-section { background: var(--off-white); }
+        .media-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 48px; }
+        .media-card { background: white; border-radius: 20px; overflow: hidden; text-decoration: none; color: var(--dark); display: flex; flex-direction: column; transition: transform 0.3s var(--ease), box-shadow 0.3s var(--ease); }
+        .media-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-lg); }
+        .media-thumb { position: relative; aspect-ratio: 16/9; overflow: hidden; background: #111; }
+        .media-thumb img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s; display: block; }
+        .media-card:hover .media-thumb img { transform: scale(1.05); }
+        .media-play { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; background: rgba(0,0,0,0.32); }
+        .media-play-icon { width: 52px; height: 52px; background: #FF0000; border-radius: 12px; display: flex; align-items: center; justify-content: center; transition: transform 0.25s; }
+        .media-card:hover .media-play-icon { transform: scale(1.1); }
+        .media-play-icon svg { margin-left: 3px; }
+        .media-header { display: flex; align-items: center; gap: 12px; padding: 20px 22px 16px; border-left: 4px solid var(--green); margin: 0; }
+        .media-icon { font-size: 22px; line-height: 1; }
+        .media-src-name { font-size: 14px; font-weight: 700; letter-spacing: 0.2px; }
+        .media-body { padding: 18px 22px 22px; flex: 1; display: flex; flex-direction: column; gap: 14px; }
+        .media-quote { font-size: 14px; line-height: 1.72; color: var(--gray); font-style: italic; flex: 1; margin: 0; }
+        .media-link { font-size: 13px; font-weight: 600; color: var(--green); display: inline-flex; align-items: center; gap: 4px; }
+
+        /* ── RULES ── */
+        .rules { background: var(--off-white); }
+        .rules-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-top: 56px; }
+        .rule-item { background: white; border-radius: 16px; padding: 28px 24px; display: flex; align-items: flex-start; gap: 16px; box-shadow: 0 2px 14px rgba(0,0,0,0.05); }
+        .rule-icon { font-size: 28px; flex-shrink: 0; line-height: 1; margin-top: 2px; }
+        .rule-title { font-size: 15px; font-weight: 600; margin-bottom: 4px; }
+        .rule-desc { font-size: 14px; color: var(--gray); line-height: 1.55; }
+
+        /* ── LOCATION ── */
+        .location { background: var(--white); }
+        .map-wrap { height: 300px; border-radius: var(--radius); overflow: hidden; margin-top: 28px; box-shadow: var(--shadow-lg); }
+        .map-directions { display: inline-flex; align-items: center; gap: 8px; margin-top: 20px; padding: 12px 24px; background: var(--dark); color: white; border-radius: 980px; text-decoration: none; font-size: 14px; font-weight: 600; transition: all 0.25s var(--ease); }
+        .map-directions:hover { background: var(--green); transform: scale(1.04); }
+        .map-wrap iframe { width: 100%; height: 100%; border: 0; display: block; }
+
+        /* ── CONTACT + CHANNELS (merged) ── */
+        .contact { background: var(--dark); padding: 96px 24px; }
+        .contact .eyebrow { color: var(--green-light); text-align: center; }
+        .contact .s-title { color: white; text-align: center; }
+        .contact-inner { max-width: 960px; margin: 0 auto; }
+        .contact-grid {
+            display: grid; grid-template-columns: 1fr 1fr;
+            gap: 0; margin-top: 64px;
+        }
+        .contact-col-phone {
+            padding-right: 56px;
+            border-right: 1px solid rgba(255,255,255,0.08);
+        }
+        .contact-col-book { padding-left: 56px; }
+        .contact-col-label {
+            font-size: 11px; font-weight: 600; letter-spacing: 1.8px;
+            text-transform: uppercase; color: rgba(255,255,255,0.35);
+            margin-bottom: 20px; display: block;
+        }
+        .contact-phone {
+            font-size: clamp(30px, 4.5vw, 48px); font-weight: 700;
+            color: white; letter-spacing: -1.5px; text-decoration: none;
+            display: block; margin-bottom: 28px; transition: color 0.2s;
+            line-height: 1.1;
+        }
+        .contact-phone:hover { color: var(--green-light); }
+        .contact-actions { display: flex; gap: 10px; flex-wrap: wrap; }
+        .contact-call {
+            display: inline-flex; align-items: center; gap: 8px;
+            padding: 11px 22px; background: var(--green); color: white;
+            border-radius: 980px; text-decoration: none; font-size: 14px;
+            font-weight: 600; transition: all 0.25s var(--ease);
+        }
+        .contact-call:hover { background: var(--green-mid); transform: scale(1.04); }
+        .contact-fb {
+            display: inline-flex; align-items: center; gap: 8px;
+            padding: 11px 22px; background: transparent; color: white;
+            border: 1.5px solid rgba(255,255,255,0.2); border-radius: 980px;
+            text-decoration: none; font-size: 14px; font-weight: 600;
+            transition: all 0.25s var(--ease);
+        }
+        .contact-fb:hover { background: rgba(255,255,255,0.07); border-color: rgba(255,255,255,0.4); }
+
+        /* channel list rows */
+        .ch-list { display: flex; flex-direction: column; gap: 12px; }
+        .ch-row {
+            display: flex; align-items: center; gap: 14px;
+            padding: 16px 18px; border-radius: 14px; text-decoration: none;
+            border: 1px solid rgba(255,255,255,0.08);
+            transition: all 0.25s var(--ease);
+        }
+        .ch-row:hover { border-color: rgba(255,255,255,0.22); background: rgba(255,255,255,0.04); transform: translateX(4px); }
+        .ch-row-logo {
+            width: 38px; height: 38px; border-radius: 10px;
+            display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+        }
+        .ch-airbnb-row .ch-row-logo { background: #FF5A5F; }
+        .ch-fb-row .ch-row-logo { background: #1877F2; }
+        .ch-row-body { flex: 1; min-width: 0; }
+        .ch-row-name { font-size: 14px; font-weight: 600; color: white; margin-bottom: 2px; }
+        .ch-row-desc { font-size: 12px; color: rgba(255,255,255,0.45); line-height: 1.4; }
+        .ch-row-arrow { color: rgba(255,255,255,0.25); font-size: 15px; flex-shrink: 0; transition: transform 0.2s var(--ease), color 0.2s; }
+        .ch-row:hover .ch-row-arrow { color: rgba(255,255,255,0.7); transform: translateX(3px); }
+
+        @media (max-width: 720px) {
+            .contact-grid { grid-template-columns: 1fr; }
+            .contact-col-phone {
+                padding-right: 0; border-right: none;
+                border-bottom: 1px solid rgba(255,255,255,0.08);
+                padding-bottom: 40px; margin-bottom: 40px;
+            }
+            .contact-col-book { padding-left: 0; }
+        }
+
+        /* ── FOOTER CTA ── */
+        .fcta { background: linear-gradient(145deg, #071a0e 0%, #0d2b1a 30%, #1b4332 65%, #2d6a4f 100%); padding: 110px 24px; text-align: center; position: relative; overflow: hidden; }
+        .fcta::before { content:''; position:absolute; width:600px; height:600px; border-radius:50%; background:radial-gradient(circle, rgba(82,183,136,0.15) 0%, transparent 70%); top:-100px; right:-80px; pointer-events:none; }
+        .fcta-title { font-size: clamp(38px, 7vw, 70px); font-weight: 700; color: white; letter-spacing: -2.5px; margin-bottom: 16px; position: relative; }
+        .fcta-sub { font-size: 19px; color: rgba(255,255,255,0.65); margin-bottom: 52px; position: relative; }
+        .fcta-btn { display: inline-flex; align-items: center; gap: 10px; background: white; color: var(--dark); padding: 18px 42px; border-radius: 980px; text-decoration: none; font-size: 18px; font-weight: 600; box-shadow: 0 10px 44px rgba(0,0,0,0.35); transition: transform 0.3s var(--ease), box-shadow 0.3s var(--ease); position: relative; }
+        .fcta-btn:hover { transform: translateY(-4px) scale(1.03); box-shadow: 0 20px 60px rgba(0,0,0,0.45); }
+
+        /* ── BOOKING / AVAILABILITY ── */
+        .avail-section { background: var(--off-white); text-align: center; }
+        .avail-wrap { max-width: 920px; margin: 56px auto 0; }
+        .cal-months { display: block; max-width: 400px; margin: 0 auto 28px; }
+        .cal-month { background: white; border-radius: 20px; padding: 28px; box-shadow: var(--shadow); }
+        .cal-month-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 18px; }
+        .cal-month-name { font-size: 15px; font-weight: 700; }
+        .cal-nav-btn { background: none; border: 1.5px solid rgba(0,0,0,0.1); border-radius: 50%; width: 32px; height: 32px; cursor: pointer; font-size: 16px; display: flex; align-items: center; justify-content: center; transition: background 0.2s; color: var(--dark); font-family: var(--font); }
+        .cal-nav-btn:hover { background: var(--off-white); }
+        .cal-weekdays { display: grid; grid-template-columns: repeat(7, 1fr); gap: 2px; margin-bottom: 6px; }
+        .cal-weekday { font-size: 11px; font-weight: 600; color: var(--gray); text-align: center; padding: 4px 0; }
+        .cal-days { display: grid; grid-template-columns: repeat(7, 1fr); gap: 2px; }
+        .cal-day { aspect-ratio: 1; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 13px; cursor: pointer; transition: all 0.15s; user-select: none; }
+        .cal-day:hover:not(.booked):not(.past):not(.empty) { background: rgba(45,106,79,0.12); color: var(--green); }
+        .cal-day.empty { pointer-events: none; }
+        .cal-day.past { color: #c8c8cc; pointer-events: none; }
+        .cal-day.booked { background: rgba(255,59,48,0.07); color: #ff3b30; text-decoration: line-through; cursor: not-allowed; font-size: 11px; }
+        .cal-day.check-in { background: var(--green); color: white; border-radius: 50% 0 0 50%; }
+        .cal-day.check-out { background: var(--green); color: white; border-radius: 0 50% 50% 0; }
+        .cal-day.in-range { background: rgba(45,106,79,0.12); color: var(--green); border-radius: 0; }
+        .cal-day.check-in.solo { border-radius: 50%; }
+        .cal-status { font-size: 14px; color: var(--green); font-weight: 600; min-height: 22px; margin-bottom: 20px; }
+        .cal-legend { display: flex; align-items: center; justify-content: center; gap: 24px; margin-bottom: 36px; flex-wrap: wrap; }
+        .leg { display: flex; align-items: center; gap: 8px; font-size: 13px; color: var(--gray); }
+        .leg::before { content:''; width: 16px; height: 16px; border-radius: 50%; display: inline-block; flex-shrink: 0; }
+        .leg.available::before { background: rgba(45,106,79,0.12); border: 2px solid var(--green-mid); }
+        .leg.booked::before { background: rgba(255,59,48,0.07); border: 2px solid #ff3b30; }
+        .leg.selected::before { background: var(--green); }
+        .bk-actions { display: flex; align-items: flex-start; justify-content: center; gap: 24px; flex-wrap: wrap; }
+        .bk-option { display: flex; flex-direction: column; align-items: center; gap: 8px; }
+        .bk-option-desc { font-size: 12px; color: #6b7a6e; text-align: center; max-width: 170px; line-height: 1.5; margin: 0; }
+        .bk-direct-btn { font-size: 16px; font-weight: 600; padding: 16px 36px; border: none; border-radius: 980px; background: var(--green); color: white; cursor: pointer; transition: all 0.25s var(--ease); font-family: var(--font); }
+        .bk-direct-btn:hover { background: var(--green-mid); transform: scale(1.04); }
+        .bk-airbnb-btn { font-size: 16px; font-weight: 600; padding: 16px 36px; border: none; border-radius: 980px; background: #FF5A5F; color: white; cursor: pointer; transition: all 0.25s var(--ease); font-family: var(--font); text-decoration: none; display: inline-block; }
+        .bk-airbnb-btn:hover { background: #e04e52; transform: scale(1.04); }
+        .bk-fb-btn { font-size: 15px; font-weight: 600; padding: 14px 30px; border: 2px solid #1877F2; border-radius: 980px; background: transparent; color: #1877F2; text-decoration: none; transition: all 0.25s var(--ease); display: inline-flex; align-items: center; gap: 9px; }
+        .bk-fb-btn:hover { background: #1877F2; color: white; transform: scale(1.04); }
+        .bk-fb-btn svg { flex-shrink: 0; }
+        .bk-fb-btn:hover svg path { fill: white; }
+
+        /* ── BOOKING MODAL ── */
+        .modal-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.5); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); z-index: 500; display: flex; align-items: center; justify-content: center; padding: 20px; opacity: 0; pointer-events: none; transition: opacity 0.3s var(--ease); }
+        .modal-overlay.open { opacity: 1; pointer-events: all; }
+        .modal-box { background: white; border-radius: 28px; padding: 48px 44px; width: 100%; max-width: 560px; max-height: 90vh; overflow-y: auto; position: relative; transform: translateY(36px) scale(0.97); transition: transform 0.35s var(--ease); box-shadow: 0 40px 120px rgba(0,0,0,0.28); }
+        .modal-overlay.open .modal-box { transform: translateY(0) scale(1); }
+        .modal-close { position: absolute; top: 20px; right: 20px; background: var(--off-white); border: none; width: 36px; height: 36px; border-radius: 50%; cursor: pointer; font-size: 16px; display: flex; align-items: center; justify-content: center; transition: background 0.2s; color: var(--dark); font-family: var(--font); }
+        .modal-close:hover { background: #e8e8ed; }
+        .modal-box h3 { font-size: 24px; font-weight: 700; margin-bottom: 32px; letter-spacing: -0.5px; }
+        .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+        .form-group { margin-bottom: 20px; }
+        .form-group label { display: block; font-size: 13px; font-weight: 600; color: var(--gray); margin-bottom: 8px; }
+        .form-group input, .form-group select, .form-group textarea { width: 100%; padding: 13px 16px; border: 1.5px solid #e0e0e5; border-radius: 12px; font-size: 15px; font-family: var(--font); background: white; color: var(--dark); transition: border-color 0.2s; outline: none; }
+        .form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color: var(--green); box-shadow: 0 0 0 3px rgba(45,106,79,0.1); }
+        .form-group textarea { resize: vertical; min-height: 80px; }
+        .form-submit { width: 100%; padding: 16px; background: var(--green); color: white; border: none; border-radius: 14px; font-size: 17px; font-weight: 600; cursor: pointer; font-family: var(--font); transition: all 0.25s var(--ease); margin-top: 8px; }
+        .form-submit:hover { background: var(--green-mid); transform: scale(1.02); }
+        .form-submit:disabled { opacity: 0.6; cursor: not-allowed; transform: none; }
+        .form-note { font-size: 13px; color: var(--gray); text-align: center; margin-top: 14px; line-height: 1.5; }
+        .form-success { text-align: center; padding: 48px 20px; }
+        .success-icon { width: 72px; height: 72px; background: linear-gradient(135deg, var(--green), var(--green-light)); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 32px; color: white; margin: 0 auto 24px; }
+        .form-success h4 { font-size: 22px; font-weight: 700; margin-bottom: 12px; }
+        .form-success p { font-size: 15px; color: var(--gray); line-height: 1.65; }
+
+        /* ── FOOTER ── */
+        footer { background: var(--dark); padding: 28px 28px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+        footer p { font-size: 12px; color: rgba(255,255,255,0.35); }
+        footer a { font-size: 12px; color: rgba(255,255,255,0.35); text-decoration: none; }
+        footer a:hover { color: var(--green-light); }
+
+        /* ── ANIMATIONS ── */
+        .fu { opacity: 0; transform: translateY(44px); transition: opacity 0.75s var(--ease), transform 0.75s var(--ease); }
+        .fu.d1 { transition-delay: 0.1s; } .fu.d2 { transition-delay: 0.2s; }
+        .fu.d3 { transition-delay: 0.3s; } .fu.d4 { transition-delay: 0.4s; }
+        .fu.vis { opacity: 1; transform: translateY(0); }
+
+        /* ── RESPONSIVE ── */
+        @media (max-width: 860px) {
+            .nav-right { gap: 8px; }
+            .lang-switcher { display: none; }
+            .lang-dropdown { display: block; }
+            .stats-inner { grid-template-columns: repeat(2, 1fr); }
+            .stat { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.08); }
+            .stat:nth-child(odd) { border-right: 1px solid rgba(255,255,255,0.08); }
+            .stat:last-child, .stat:nth-last-child(2):nth-child(odd) { border-bottom: none; }
+            .hl-grid { grid-template-columns: 1fr; }
+            .gallery-grid { grid-template-columns: 1fr 1fr; grid-template-rows: 200px 200px 200px; }
+            .g-item:first-child { grid-row: span 1; grid-column: span 2; }
+            .about-inner { grid-template-columns: 1fr; gap: 40px; }
+            .am-grid { grid-template-columns: repeat(2, 1fr); }
+            .price-cards { grid-template-columns: 1fr; }
+            .media-grid { grid-template-columns: 1fr; }
+            footer { flex-direction: column; text-align: center; }
+            .cal-months { grid-template-columns: 1fr; }
+            .form-row { grid-template-columns: 1fr; }
+            .modal-box { padding: 36px 24px; border-radius: 20px; }
+        }
+        @media (max-width: 480px) {
+            .pc { padding: 40px 28px; } .pc-num { letter-spacing: -3px; }
+            .nav { padding: 0 16px; }
+            .cal-day { font-size: 12px; }
+        }
+
+        /* ── ABOUT + AMENITIES MERGED ── */
+        .about-am-divider { border: none; border-top: 1px solid rgba(255,255,255,0.1); margin: 64px 0 56px; }
+        .am-grid-dark .am-item { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.09); }
+        .am-grid-dark .am-item:hover { background: rgba(255,255,255,0.11); box-shadow: 0 4px 20px rgba(0,0,0,0.25); transform: translateY(-3px); }
+        .am-grid-dark .am-name { color: rgba(255,255,255,0.85); }
+        .show-all-btn {
+            display: inline-flex; align-items: center; gap: 9px;
+            padding: 14px 28px; border: 1.5px solid rgba(255,255,255,0.28);
+            background: transparent; color: white; border-radius: 980px;
+            font-size: 15px; font-weight: 600; cursor: pointer;
+            transition: all 0.25s var(--ease); font-family: var(--font);
+        }
+        .show-all-btn:hover { background: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.55); transform: scale(1.03); }
+
+        /* ── GALLERY SEE ALL BUTTON ── */
+        .gallery-see-all-wrap { text-align: right; padding: 14px 24px 0; max-width: 980px; margin: 0 auto; }
+        .gallery-see-all {
+            display: inline-flex; align-items: center; gap: 8px;
+            padding: 11px 24px; border: 1.5px solid rgba(0,0,0,0.15);
+            background: white; color: var(--dark); border-radius: 14px;
+            font-size: 14px; font-weight: 600; cursor: pointer;
+            transition: all 0.25s var(--ease); font-family: var(--font);
+            box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+        }
+        .gallery-see-all:hover { background: var(--dark); color: white; border-color: var(--dark); transform: scale(1.03); }
+
+        /* ── GALLERY POPUP MODAL ── */
+        .gallery-modal-overlay {
+            position: fixed; inset: 0; background: rgba(0,0,0,0.95);
+            z-index: 700; display: flex; flex-direction: column;
+            opacity: 0; pointer-events: none; transition: opacity 0.3s var(--ease);
+        }
+        .gallery-modal-overlay.open { opacity: 1; pointer-events: all; }
+        .gallery-modal-header {
+            display: flex; align-items: center; gap: 16px;
+            padding: 14px 20px; border-bottom: 1px solid rgba(255,255,255,0.1);
+            background: rgba(0,0,0,0.6); backdrop-filter: blur(24px); flex-shrink: 0;
+        }
+        .gallery-modal-title { color: white; font-size: 15px; font-weight: 700; white-space: nowrap; }
+        .gallery-modal-tabs { display: flex; gap: 6px; overflow-x: auto; flex: 1; scrollbar-width: none; }
+        .gallery-modal-tabs::-webkit-scrollbar { display: none; }
+        .gallery-tab {
+            white-space: nowrap; padding: 6px 16px; border-radius: 980px;
+            border: 1.5px solid rgba(255,255,255,0.2); background: transparent;
+            color: rgba(255,255,255,0.6); font-size: 13px; font-weight: 600;
+            cursor: pointer; transition: all 0.18s; font-family: var(--font); flex-shrink: 0;
+        }
+        .gallery-tab.active { background: white; color: var(--dark); border-color: white; }
+        .gallery-tab:hover:not(.active) { background: rgba(255,255,255,0.1); color: white; border-color: rgba(255,255,255,0.4); }
+        .gallery-modal-close {
+            background: rgba(255,255,255,0.1); border: none; color: white;
+            width: 38px; height: 38px; border-radius: 50%; cursor: pointer; font-size: 17px;
+            display: flex; align-items: center; justify-content: center;
+            transition: background 0.2s; flex-shrink: 0; font-family: var(--font);
+        }
+        .gallery-modal-close:hover { background: rgba(255,255,255,0.22); }
+        .gallery-modal-body { flex: 1; overflow-y: auto; padding: 28px 20px; }
+        .gallery-cat-section { margin-bottom: 44px; }
+        .gallery-cat-section:last-child { margin-bottom: 12px; }
+        .gallery-cat-title { font-size: 18px; font-weight: 700; color: white; margin-bottom: 12px; letter-spacing: -0.3px; }
+        .gallery-photo-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; }
+        .gallery-photo-item { aspect-ratio: 4/3; overflow: hidden; border-radius: 8px; cursor: zoom-in; transition: filter 0.2s, transform 0.2s; }
+        .gallery-photo-item.span2 { grid-column: span 2; aspect-ratio: 16/9; }
+        .gallery-photo-item:hover { filter: brightness(1.1); transform: scale(1.015); }
+        .gallery-photo-item img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+        /* ── AMENITIES POPUP MODAL ── */
+        .am-modal-overlay {
+            position: fixed; inset: 0; background: rgba(0,0,0,0.5);
+            backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+            z-index: 700; display: flex; align-items: center; justify-content: center;
+            padding: 20px; opacity: 0; pointer-events: none; transition: opacity 0.3s var(--ease);
+        }
+        .am-modal-overlay.open { opacity: 1; pointer-events: all; }
+        .am-modal-box {
+            background: white; border-radius: 28px; width: 100%; max-width: 720px;
+            max-height: 88vh; overflow-y: auto; position: relative;
+            transform: translateY(36px) scale(0.97); transition: transform 0.35s var(--ease);
+            box-shadow: 0 40px 120px rgba(0,0,0,0.28);
+        }
+        .am-modal-overlay.open .am-modal-box { transform: translateY(0) scale(1); }
+        .am-modal-sticky {
+            position: sticky; top: 0; background: white; z-index: 1;
+            border-bottom: 1px solid #f0f0f0; border-radius: 28px 28px 0 0;
+            padding: 22px 28px; display: flex; align-items: center; justify-content: space-between;
+        }
+        .am-modal-sticky h3 { font-size: 19px; font-weight: 700; letter-spacing: -0.4px; }
+        .am-modal-close-btn {
+            background: var(--off-white); border: none; width: 36px; height: 36px;
+            border-radius: 50%; cursor: pointer; font-size: 16px;
+            display: flex; align-items: center; justify-content: center;
+            transition: background 0.2s; color: var(--dark); font-family: var(--font); flex-shrink: 0;
+        }
+        .am-modal-close-btn:hover { background: #e8e8ed; }
+        .am-modal-body { padding: 24px 28px 32px; }
+        .am-cat-block { margin-bottom: 28px; }
+        .am-cat-block:last-child { margin-bottom: 0; }
+        .am-cat-block-title { font-size: 15px; font-weight: 700; color: var(--dark); margin-bottom: 12px; padding-bottom: 10px; border-bottom: 1px solid #f0f0f5; letter-spacing: -0.1px; }
+        .am-cat-list { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+        .am-cat-item { display: flex; align-items: center; gap: 11px; padding: 11px 14px; background: var(--off-white); border-radius: 12px; }
+        .am-cat-icon { font-size: 20px; flex-shrink: 0; width: 26px; text-align: center; line-height: 1; }
+        .am-cat-name { font-size: 14px; font-weight: 500; color: var(--dark); }
+
+        @media (max-width: 640px) {
+            .gallery-photo-grid { grid-template-columns: repeat(2, 1fr); }
+            .gallery-photo-item.span2 { grid-column: span 2; }
+            .am-cat-list { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav over-hero" id="main-nav">
+    <a href="#" class="nav-logo">Farm <em>to</em> Table House</a>
+    <div class="nav-right">
+        <div class="lang-switcher">
+            <button class="lang-btn active" onclick="setLang('th')">TH</button>
+            <button class="lang-btn" onclick="setLang('en')">EN</button>
+            <button class="lang-btn" onclick="setLang('zh')">中文</button>
+        </div>
+        <div class="lang-dropdown" id="lang-dropdown">
+            <button class="lang-dd-btn" onclick="toggleLangDD()" id="lang-dd-trigger">
+                <span id="lang-dd-label">TH</span>
+                <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 3.5L5 6.5L8 3.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <div class="lang-dd-menu" id="lang-dd-menu">
+                <button onclick="setLang('th');toggleLangDD()">TH — ไทย</button>
+                <button onclick="setLang('en');toggleLangDD()">EN — English</button>
+                <button onclick="setLang('zh');toggleLangDD()">中文</button>
+            </div>
+        </div>
+        <a href="#contact" class="nav-contact" data-i18n="nav.contact" onclick="event.preventDefault();document.getElementById('contact').scrollIntoView({behavior:'smooth'})">ติดต่อ</a>
+        <a href="#booking" class="nav-book" data-i18n="nav.cta" onclick="event.preventDefault();document.getElementById('booking').scrollIntoView({behavior:'smooth'})">จองเลย ↓</a>
+    </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+    <div class="hero-bg"></div>
+    <img class="hero-img" src="images/01.jpeg" alt="Farm to Table House">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+        <div class="hero-badge">
+            <span class="star">★</span> 4.92 &nbsp;·&nbsp; Superhost &nbsp;·&nbsp; <span style="opacity:0.8;font-size:0.88em;display:inline-flex;align-items:center;gap:4px;vertical-align:middle;color:#FF385C;"><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.003 0C5.374 0 0 5.373 0 12.003 0 18.63 5.374 24 12.003 24 18.63 24 24 18.63 24 12.003 24 5.373 18.63 0 12.003 0zM5.34 18.664c-.333-.924-.195-1.974.417-2.888.609-.908 1.55-1.621 2.562-2.153l.334-.177.267.267c.53.528 1.076 1.027 1.624 1.552-.463.348-.897.724-1.294 1.132-.44.451-.78.934-.969 1.387-.23.543-.214 1.025.049 1.317.265.294.748.385 1.316.247.626-.151 1.24-.51 1.746-.99.307-.287.575-.612.799-.97l.308.33c.252.272.516.535.789.786-.302.404-.65.77-1.035 1.08-.686.55-1.462.918-2.24 1.063-.78.146-1.542.06-2.126-.25-.571-.304-.947-.836-1.1-1.506a3.21 3.21 0 0 1-.447-.227zm6.664 2.002c-.297-.26-.58-.538-.852-.83-.272.292-.555.57-.852.83-.524.457-1.093.8-1.692.99.601.192 1.17.534 1.692.99.297.258.58.537.852.83.272-.293.555-.572.852-.83.525-.456 1.093-.8 1.694-.99-.601-.19-1.17-.533-1.694-.99zm5.656-2.002c-.153.67-.53 1.202-1.1 1.506-.583.31-1.346.396-2.127.25-.777-.145-1.553-.513-2.24-1.063a7.15 7.15 0 0 1-1.033-1.08c.272-.251.537-.514.79-.786l.307-.33c.224.358.491.683.8.97.505.48 1.119.839 1.745.99.568.138 1.051.047 1.316-.247.263-.292.28-.774.05-1.317-.19-.453-.53-.936-.97-1.387-.396-.408-.83-.784-1.293-1.132.548-.525 1.094-1.024 1.623-1.552l.268-.267.333.177c1.013.532 1.953 1.245 2.562 2.153.612.914.75 1.964.417 2.888l-.448.227zm-5.655-9.53c-.71 0-1.285.576-1.285 1.285 0 .71.575 1.285 1.285 1.285.709 0 1.284-.576 1.284-1.285 0-.709-.575-1.284-1.284-1.284zm0 7.44c-.497-.476-1.008-.953-1.512-1.433-.296-.28-.592-.558-.885-.843l.002-.003c.507-.536 1.03-1.065 1.541-1.572.284-.278.565-.553.854-.834.289.281.57.556.854.834.511.507 1.034 1.036 1.541 1.572l.002.003c-.293.285-.589.563-.885.843-.504.48-1.015.957-1.512 1.433z"/></svg>on Airbnb</span>
+        </div>
+        <div class="hero-editorial">
+            <div class="ht-line1">
+                <span class="ht-farm">Farm</span><span class="ht-to">To</span>
+            </div>
+            <div class="ht-thai">
+                <span class="ht-thai-main" data-i18n="hero.place">บ้านพักวิวเขา</span>
+                <span class="ht-thai-sub" data-i18n="hero.location">ปากช่อง · วังไทร</span>
+            </div>
+            <span class="ht-table">Table</span>
+            <span class="ht-house">House</span>
+        </div>
+        <a href="#pricing" class="hero-cta" data-i18n="hero.cta">ดูราคาและรายละเอียด ↓</a>
+    </div>
+    <div class="hero-scroll"><span data-i18n="hero.scroll">เลื่อนดู</span><span>↓</span></div>
+</section>
+
+<!-- STATS -->
+<section class="stats-bar">
+    <div class="stats-inner">
+        <div class="stat fu">
+            <div class="stat-num">10<sup data-i18n="stats.unit.person">คน</sup></div>
+            <div class="stat-lbl" data-i18n="stats.guests">รองรับสูงสุด</div>
+        </div>
+        <div class="stat fu d1">
+            <div class="stat-num">3<sup data-i18n="stats.unit.room">ห้อง</sup></div>
+            <div class="stat-lbl" data-i18n="stats.bedrooms">ห้องนอน</div>
+        </div>
+        <div class="stat fu d2">
+            <div class="stat-num">3<sup data-i18n="stats.unit.room">ห้อง</sup></div>
+            <div class="stat-lbl" data-i18n="stats.bathrooms">ห้องน้ำ</div>
+        </div>
+        <div class="stat fu d3">
+            <div class="stat-num">4.92<sup>★</sup></div>
+            <div class="stat-lbl" data-i18n="stats.rating">คะแนนรีวิว</div>
+        </div>
+    </div>
+</section>
+
+<!-- PRICING -->
+<section class="section pricing" id="pricing">
+    <div class="pricing-wrap">
+        <p class="eyebrow lite fu" data-i18n="pricing.eyebrow">ราคา</p>
+        <h2 class="s-title white fu" data-i18n="pricing.title">เลือกวันพักของคุณ</h2>
+        <p class="s-sub white fu" style="margin:0 auto;" data-i18n="pricing.sub">ราคาต่อคืน — รวมค่าธรรมเนียมแล้ว</p>
+        <div class="price-cards">
+            <!-- WEEKDAY -->
+            <div class="pc weekday fu">
+                <div class="pc-type" data-i18n="weekday.type">วันธรรมดา</div>
+                <div class="pc-price">
+                    <span class="pc-cur">฿</span>
+                    <!-- ╔══════════════════════════╗
+                         ║ 💰 แก้ราคาวันธรรมดาที่นี่ ║
+                         ╚══════════════════════════╝ -->
+                    <span class="pc-num" id="price-weekday">5,500</span>
+                </div>
+                <p class="pc-per" data-i18n="weekday.per">ต่อคืน · จันทร์ – พฤหัสบดี</p>
+                <div class="pc-divider"></div>
+                <ul class="pc-includes">
+                    <li><span class="check">✓</span><span data-i18n="inc.1">รองรับสูงสุด 10 คน</span></li>
+                    <li><span class="check">✓</span><span data-i18n="inc.2">Check-in ยืดหยุ่น</span></li>
+                    <li><span class="check">✓</span><span data-i18n="inc.3">Check-out ก่อนเที่ยง</span></li>
+                    <li><span class="check">✓</span><span data-i18n="inc.4">WiFi · ที่จอดรถฟรี</span></li>
+                </ul>
+            </div>
+            <!-- WEEKEND -->
+            <div class="pc weekend fu d1">
+                <div class="pc-badge" data-i18n="weekend.badge">ยอดนิยม</div>
+                <div class="pc-type" data-i18n="weekend.type">วันหยุด / เสาร์–อาทิตย์</div>
+                <div class="pc-price">
+                    <span class="pc-cur">฿</span>
+                    <!-- ╔══════════════════════════╗
+                         ║ 💰 แก้ราคาวันหยุดที่นี่  ║
+                         ╚══════════════════════════╝ -->
+                    <span class="pc-num" id="price-weekend">6,500</span>
+                </div>
+                <p class="pc-per" data-i18n="weekend.per">ต่อคืน · ศุกร์ – อาทิตย์ &amp; วันหยุดนักขัตฤกษ์</p>
+                <div class="pc-divider"></div>
+                <ul class="pc-includes">
+                    <li><span class="check">✓</span><span data-i18n="inc.1">รองรับสูงสุด 10 คน</span></li>
+                    <li><span class="check">✓</span><span data-i18n="inc.2">Check-in ยืดหยุ่น</span></li>
+                    <li><span class="check">✓</span><span data-i18n="inc.3">Check-out ก่อนเที่ยง</span></li>
+                    <li><span class="check">✓</span><span data-i18n="inc.4">WiFi · ที่จอดรถฟรี</span></li>
+                </ul>
+            </div>
+        </div>
+        <p class="price-note fu" data-i18n="pricing.note">* ราคาข้างต้นเป็นราคาอ้างอิง · ยืนยันราคาจริงได้บน Airbnb</p>
+
+    </div>
+</section>
+
+<!-- BOOKING / AVAILABILITY -->
+<section class="section avail-section" id="booking">
+    <p class="eyebrow fu" data-i18n="bk.eyebrow">ปฏิทินและการจอง</p>
+    <h2 class="section-title fu" data-i18n="bk.title">เช็ควันว่างและจอง</h2>
+    <p class="section-sub fu" data-i18n="bk.sub">เลือกวันที่ต้องการ จากนั้นกรอกข้อมูลเพื่อจองได้เลย</p>
+    <div class="avail-wrap fu d1">
+        <p class="cal-status" id="cal-status"></p>
+        <div class="cal-months" id="cal-container"></div>
+        <div class="cal-legend">
+            <span class="leg available" data-i18n="bk.leg.avail">ว่าง</span>
+            <span class="leg booked" data-i18n="bk.leg.booked">จองแล้ว</span>
+            <span class="leg selected" data-i18n="bk.leg.selected">วันที่เลือก</span>
+        </div>
+        <div class="bk-actions">
+            <div class="bk-option">
+                <button class="bk-direct-btn" id="bk-direct-btn" data-i18n="bk.direct">สนใจจอง</button>
+                <p class="bk-option-desc" data-i18n="bk.direct.desc">ได้ราคาพิเศษ ไม่มีค่าธรรมเนียม ติดต่อตรงกับเจ้าของ</p>
+            </div>
+            <div class="bk-option">
+                <a href="https://www.airbnb.com/rooms/1177471385484136834" target="_blank" rel="noopener" class="bk-airbnb-btn" data-i18n="ch.airbnb.btn">จองบน Airbnb →</a>
+                <p class="bk-option-desc" data-i18n="ch.airbnb.desc">ปลอดภัย มีนโยบายคุ้มครองผู้จอง ชำระเงินผ่านระบบ Airbnb</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- HIGHLIGHTS -->
+<section class="section highlights">
+    <div class="s-inner">
+        <p class="eyebrow fu" data-i18n="hl.eyebrow">ทำไมต้องที่นี่</p>
+        <h2 class="s-title fu" data-i18n="hl.title">สิ่งที่ทำให้ที่นี่พิเศษ</h2>
+        <div class="hl-grid">
+            <div class="hl-card fu">
+                <div class="hl-icon">🔐</div>
+                <h3 class="hl-name" data-i18n="hl1.name">Self Check-in</h3>
+                <p class="hl-desc" data-i18n="hl1.desc">เช็คอินได้เองด้วย Smart Lock ไม่ต้องรอ เดินทางมาถึงเมื่อไรก็เข้าพักได้เลย สะดวกสบายสุดๆ</p>
+            </div>
+            <div class="hl-card fu d1">
+                <div class="hl-icon">⛰️</div>
+                <h3 class="hl-name" data-i18n="hl2.name">วิวภูเขา &amp; สวน</h3>
+                <p class="hl-desc" data-i18n="hl2.desc">ดาดฟ้าพร้อมวิวภูเขาเขาใหญ่ 360° ล้อมรอบด้วยสวนเขียวชอุ่ม ถ่ายรูปสวยทุกมุม</p>
+            </div>
+            <div class="hl-card fu d2">
+                <div class="hl-icon">🚗</div>
+                <h3 class="hl-name" data-i18n="hl3.name">ที่จอดรถฟรี</h3>
+                <p class="hl-desc" data-i18n="hl3.desc">มีที่จอดรถในบริเวณบ้านให้ฟรี รองรับได้หลายคัน ไม่ต้องกังวลเรื่องที่จอดเลย</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- GALLERY -->
+<section class="gallery">
+    <div class="s-inner">
+        <p class="eyebrow fu" data-i18n="gallery.eyebrow">ภาพบ้าน</p>
+        <h2 class="s-title fu" data-i18n="gallery.title">สัมผัสบรรยากาศจริง</h2>
+    </div>
+    <div style="max-width:980px;margin:0 auto;padding:0 24px;">
+        <div class="gallery-grid fu">
+            <div class="g-item"><img src="images/03.jpeg" alt="" style="width:100%;height:100%;object-fit:cover;"></div>
+            <div class="g-item"><img src="images/04.jpeg" alt="" style="width:100%;height:100%;object-fit:cover;"></div>
+            <div class="g-item"><img src="images/05.jpeg" alt="" style="width:100%;height:100%;object-fit:cover;"></div>
+            <div class="g-item"><img src="images/06.jpeg" alt="" style="width:100%;height:100%;object-fit:cover;"></div>
+            <div class="g-item"><img src="images/10.jpeg" alt="" style="width:100%;height:100%;object-fit:cover;"></div>
+        </div>
+    </div>
+    <div class="gallery-see-all-wrap fu">
+        <button class="gallery-see-all" id="open-gallery-modal">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+            <span data-i18n="gallery.showAll">ดูภาพทั้งหมด (32 รูป)</span>
+        </button>
+    </div>
+</section>
+
+<!-- ABOUT + AMENITIES -->
+<section class="section about" id="about">
+    <div class="about-inner">
+        <div>
+            <p class="eyebrow lite fu" data-i18n="about.eyebrow">เกี่ยวกับที่พัก</p>
+            <h2 class="s-title white fu" data-i18n-html="about.title">หนีจากเมือง<br>มาพักใจ</h2>
+            <p style="font-size:17px;color:rgba(255,255,255,0.6);line-height:1.8;margin-top:18px;" class="fu" data-i18n="about.desc">
+                ฟาร์มเฮาส์สุดโปรดท่ามกลางภูเขาเขาใหญ่เที่ยง เหมาะสำหรับกลุ่ม 8–10 คน ประกอบด้วยบ้านหลักและบ้านเล็กอยู่ข้างๆ กัน บรรยากาศฟาร์มแบบเป็นธรรมชาติ
+            </p>
+            <ul class="feat-list fu d1">
+                <li><span class="fi">🏠</span><span data-i18n="feat.1">3 ห้องนอน · 3 ห้องน้ำ · 4 เตียง</span></li>
+                <li><span class="fi">🛤️</span><span data-i18n="feat.2">ดาดฟ้าพร้อมวิวภูเขา 360°</span></li>
+                <li><span class="fi">⛺</span><span data-i18n="feat.3">พื้นที่กลางแจ้งและแคมปิ้ง</span></li>
+                <li><span class="fi">🌱</span><span data-i18n="feat.4">เก็บผักสดปรุงอาหารเองได้</span></li>
+                <li><span class="fi">🍽️</span><span data-i18n="feat.5">โต๊ะยาวสำหรับจัดปาร์ตี้</span></li>
+            </ul>
+        </div>
+        <div class="fu d2" style="height:500px;border-radius:20px;overflow:hidden;">
+            <img src="images/12.jpeg" alt="aerial view" style="width:100%;height:100%;object-fit:cover;">
+        </div>
+    </div>
+
+    <!-- AMENITIES (merged) -->
+    <div class="s-inner" style="margin-top:0;">
+        <hr class="about-am-divider">
+        <p class="eyebrow lite fu" data-i18n="am.eyebrow">สิ่งอำนวยความสะดวก</p>
+        <h2 class="s-title white fu" data-i18n="am.title">ครบครัน พร้อมใช้</h2>
+        <p class="s-sub white fu" data-i18n="am.sub">ทุกอย่างที่ต้องการอยู่ที่นี่ครบแล้ว</p>
+        <div class="am-grid am-grid-dark" style="margin-top:40px;">
+            <div class="am-item fu">   <span class="am-icon">🌳</span><span class="am-name" data-i18n="am.1">วิวสวน</span></div>
+            <div class="am-item fu d1"><span class="am-icon">⛰️</span><span class="am-name" data-i18n="am.2">วิวภูเขา</span></div>
+            <div class="am-item fu d2"><span class="am-icon">🍳</span><span class="am-name" data-i18n="am.3">ครัวครบ</span></div>
+            <div class="am-item fu d3"><span class="am-icon">📶</span><span class="am-name">WiFi</span></div>
+            <div class="am-item fu">   <span class="am-icon">🚗</span><span class="am-name" data-i18n="am.5">ที่จอดรถฟรี</span></div>
+            <div class="am-item fu d1"><span class="am-icon">📺</span><span class="am-name">TV 65"</span></div>
+            <div class="am-item fu d2"><span class="am-icon">🎮</span><span class="am-name">PS4</span></div>
+            <div class="am-item fu d3"><span class="am-icon">🎬</span><span class="am-name">Netflix</span></div>
+            <div class="am-item fu">   <span class="am-icon">🎤</span><span class="am-name" data-i18n="am.7">คาราโอเกะ</span></div>
+            <div class="am-item fu d1"><span class="am-icon">👕</span><span class="am-name" data-i18n="am.9">เครื่องซักผ้า</span></div>
+            <div class="am-item fu d2"><span class="am-icon">🔐</span><span class="am-name">Smart Lock</span></div>
+            <div class="am-item fu d3"><span class="am-icon">⛺</span><span class="am-name" data-i18n="am.12">พื้นที่แคมปิ้ง</span></div>
+        </div>
+        <div style="margin-top:36px;" class="fu">
+            <button class="show-all-btn" id="open-am-modal" data-i18n="am.showAll">ดูสิ่งอำนวยความสะดวกทั้งหมด →</button>
+        </div>
+    </div>
+</section>
+
+<!-- MEDIA / PRESS -->
+<section class="section media-section">
+    <div class="s-inner">
+        <p class="eyebrow fu" data-i18n="media.eyebrow">ถูกพูดถึงใน</p>
+        <h2 class="s-title fu" data-i18n="media.title">สื่อและนิตยสารพูดถึงเรา</h2>
+        <div class="media-grid" id="media-grid"></div>
+    </div>
+</section>
+
+<!-- LOCATION -->
+<section class="section location">
+    <div class="s-inner">
+        <p class="eyebrow fu" data-i18n="loc.eyebrow">ที่ตั้ง</p>
+        <h2 class="s-title fu">Wang Sai, Nakhon Ratchasima</h2>
+        <p class="s-sub fu" data-i18n="loc.sub">ใกล้อุทยานแห่งชาติเขาใหญ่ — บรรยากาศธรรมชาติ สงบ มีที่จอดรถฟรีในบริเวณบ้าน</p>
+        <div class="map-wrap fu">
+            <iframe src="https://maps.google.com/maps?q=Farm+to+Table+House+Wang+Sai+Khao+Yai+Nakhon+Ratchasima&output=embed&z=14" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+        <div style="text-align:center">
+            <a href="https://maps.app.goo.gl/x1xvmeUqiTKo4tv89" target="_blank" rel="noopener" class="map-directions fu">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="3 11 22 2 13 21 11 13 3 11"/></svg>
+                <span data-i18n="loc.directions">นำทาง Google Maps →</span>
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- CONTACT + CHANNELS (merged) -->
+<section class="contact" id="contact">
+    <div class="contact-inner">
+        <p class="eyebrow fu" data-i18n="ct.eyebrow">ติดต่อเจ้าของบ้าน</p>
+        <h2 class="s-title fu" data-i18n="ct.title">พร้อมตอบทุกคำถาม</h2>
+
+        <div class="contact-grid">
+            <!-- LEFT: phone + direct contact -->
+            <div class="contact-col-phone fu d1">
+                <span class="contact-col-label" data-i18n="ct.label">โทรหาเราได้เลย</span>
+                <a href="tel:0814315092" class="contact-phone">081-431-5092</a>
+                <div class="contact-actions">
+                    <a href="tel:0814315092" class="contact-call">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+                        <span data-i18n="ct.call">โทรเลย</span>
+                    </a>
+                    <a href="#" id="ct-fb-link" target="_blank" rel="noopener" class="contact-fb">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                        <span data-i18n="ct.facebook">Facebook Page</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- RIGHT: booking channels -->
+            <div class="contact-col-book fu d2">
+                <span class="contact-col-label" data-i18n="ch.eyebrow">ช่องทางการจอง</span>
+                <div class="ch-list">
+                    <a href="https://www.airbnb.com/rooms/1177471385484136834" target="_blank" rel="noopener" class="ch-row ch-airbnb-row">
+                        <div class="ch-row-logo">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="white"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm0 4.5c1.016 0 1.838.823 1.838 1.838S13.016 8.176 12 8.176s-1.838-.822-1.838-1.838S10.984 4.5 12 4.5zm4.5 13.688c0 .31-.252.562-.563.562H8.063A.563.563 0 017.5 18.188v-.563c0-2.484 1.453-4.641 3.563-5.672v-.578c0-.622.503-1.125 1.125-1.125h-.375c-.623 0-1.126.503-1.126 1.125v.578C8.578 12.984 7.5 14.953 7.5 17.156v.563c0 .31.252.563.563.563H15.937c.31 0 .563-.253.563-.563v-.563c0-2.203-1.078-4.172-2.813-5.203v-.578c0-.622-.502-1.125-1.125-1.125h-.375c.623 0 1.125.503 1.125 1.125v.578C15.047 13.547 16.5 15.703 16.5 18.188v-.001z"/></svg>
+                        </div>
+                        <div class="ch-row-body">
+                            <div class="ch-row-name">Airbnb</div>
+                            <div class="ch-row-desc" data-i18n="ch.airbnb.desc">ปลอดภัย มีนโยบายคุ้มครองผู้จอง ชำระเงินผ่านระบบ Airbnb</div>
+                        </div>
+                        <span class="ch-row-arrow">→</span>
+                    </a>
+                    <a href="#" id="ch-fb-link" target="_blank" rel="noopener" class="ch-row ch-fb-row">
+                        <div class="ch-row-logo">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="white"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                        </div>
+                        <div class="ch-row-body">
+                            <div class="ch-row-name">Facebook</div>
+                            <div class="ch-row-desc" data-i18n="ch.fb.desc">ติดต่อตรงกับเจ้าของ ได้ราคาพิเศษ ตอบเร็ว</div>
+                        </div>
+                        <span class="ch-row-arrow">→</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <p data-i18n="footer.copy">© 2024 Farm to Table House @ Khao Yai — Wang Sai, Nakhon Ratchasima, Thailand</p>
+    <a href="https://www.airbnb.com/rooms/1177471385484136834" target="_blank" rel="noopener" data-i18n="footer.link">ดู listing บน Airbnb</a>
+</footer>
+
+<!-- BOOKING MODAL -->
+<div class="modal-overlay" id="modal-overlay" role="dialog" aria-modal="true">
+    <div class="modal-box">
+        <button class="modal-close" id="modal-close" aria-label="ปิด">✕</button>
+        <h3 data-i18n="bk.modal.title">กรอกข้อมูลการจอง</h3>
+        <form id="booking-form" novalidate>
+            <div class="form-row">
+                <div class="form-group">
+                    <label data-i18n="bk.form.name">ชื่อ-นามสกุล</label>
+                    <input type="text" id="bk-name" required autocomplete="name" placeholder="สมชาย ใจดี">
+                </div>
+                <div class="form-group">
+                    <label data-i18n="bk.form.phone">เบอร์โทรศัพท์</label>
+                    <input type="tel" id="bk-phone" required autocomplete="tel" placeholder="08X-XXX-XXXX">
+                </div>
+            </div>
+            <div class="form-group">
+                <label data-i18n="bk.form.email">อีเมล (สำหรับยืนยันการจอง)</label>
+                <input type="email" id="bk-email" autocomplete="email" placeholder="your@email.com">
+            </div>
+            <div class="form-group">
+                <label data-i18n="bk.form.facebook">Facebook</label>
+                <input type="text" id="bk-facebook" placeholder="facebook.com/yourname หรือชื่อ Facebook" autocomplete="off">
+            </div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label data-i18n="bk.form.checkin">วันเข้าพัก</label>
+                    <input type="date" id="bk-checkin" required>
+                </div>
+                <div class="form-group">
+                    <label data-i18n="bk.form.checkout">วันออก</label>
+                    <input type="date" id="bk-checkout" required>
+                </div>
+            </div>
+            <div class="form-group">
+                <label data-i18n="bk.form.guests">จำนวนผู้เข้าพัก</label>
+                <select id="bk-guests">
+                    <option value="1-4">1–4 คน</option>
+                    <option value="5-10">5–10 คน</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>
+                    <span data-i18n="bk.form.notes">หมายเหตุ</span>
+                    <span style="font-weight:400;color:#aaa;margin-left:4px" data-i18n="bk.form.optional">(ไม่บังคับ)</span>
+                </label>
+                <textarea id="bk-notes" rows="3" placeholder="เช่น จำนวนเด็ก ความต้องการพิเศษ..."></textarea>
+            </div>
+            <button type="submit" class="form-submit" id="form-submit" data-i18n="bk.form.submit">ส่งคำขอจอง</button>
+            <p class="form-note" data-i18n="bk.form.note">เจ้าของบ้านจะติดต่อยืนยันผ่าน Facebook หรือโทรศัพท์</p>
+        </form>
+        <div class="form-success" id="form-success" style="display:none">
+            <div class="success-icon">✓</div>
+            <h4 data-i18n="bk.success.title">ส่งคำขอจองแล้ว!</h4>
+            <p data-i18n="bk.success.desc">เจ้าของบ้านจะติดต่อกลับเร็วๆ นี้ ขอบคุณที่สนใจ Farm to Table House</p>
+        </div>
+    </div>
+</div>
+
+<!-- GALLERY MODAL -->
+<div class="gallery-modal-overlay" id="gallery-modal-overlay" role="dialog" aria-modal="true">
+    <div class="gallery-modal-header">
+        <span class="gallery-modal-title" data-i18n="gallery.modal.title">ภาพบ้านทั้งหมด</span>
+        <div class="gallery-modal-tabs" id="gallery-tabs"></div>
+        <button class="gallery-modal-close" id="gallery-modal-close" aria-label="ปิด">✕</button>
+    </div>
+    <div class="gallery-modal-body" id="gallery-modal-body"></div>
+</div>
+
+<!-- AMENITIES MODAL -->
+<div class="am-modal-overlay" id="am-modal-overlay" role="dialog" aria-modal="true">
+    <div class="am-modal-box">
+        <div class="am-modal-sticky">
+            <h3 data-i18n="am.modal.title">สิ่งอำนวยความสะดวกทั้งหมด</h3>
+            <button class="am-modal-close-btn" id="am-modal-close" aria-label="ปิด">✕</button>
+        </div>
+        <div class="am-modal-body" id="am-modal-body"></div>
+    </div>
+</div>
+
+<script>
+    /* ════════════════════════════════════════
+       ⚙️  CONFIG — แก้ค่าตรงนี้
+       ════════════════════════════════════════ */
+    const CONFIG = {
+        FACEBOOK_URL: 'https://www.facebook.com/farm2tablefamily/',  // ← ใส่ link Facebook ของคุณ
+        GAS_URL: 'https://script.google.com/macros/s/AKfycbwxv2wXHYYk-BLNzW3-bSEtV8nF9ZmsPUMqyfr7v0hEXbiuga7STWJntnldJwDSCT2QBA/exec',
+    };
+
+    /* ════════════════════════════════════════
+       💰  UPDATE PRICES HERE — แก้ราคาที่นี่
+       ════════════════════════════════════════ */
+    const PRICES = {
+        weekday: '5,500',   // ราคาวันธรรมดา (฿/คืน)
+        weekend: '6,500',   // ราคาวันหยุด   (฿/คืน)
+    };
+    document.getElementById('price-weekday').textContent = PRICES.weekday;
+    document.getElementById('price-weekend').textContent = PRICES.weekend;
+
+    /* ════════════════════════════════════════
+       🌐  TRANSLATIONS
+       ════════════════════════════════════════ */
+    const T = {
+        th: {
+            'nav.cta':        'จองเลย ↓',
+            'nav.contact':    'ติดต่อ',
+            'nav.book':       'จองผ่าน Airbnb →',
+            'hero.place':     'บ้านพักวิวเขา',
+            'hero.location':  'ปากช่อง · วังไทร',
+            'hero.reviews':   '25 รีวิว',
+            'hero.sub':       'หนีเมือง มาอยู่กับธรรมชาติ ที่เขาใหญ่<br>วิวภูเขา · อากาศดี · ครบทุกอย่าง · พักได้ทั้งกลุ่ม',
+            'hero.cta':       'ดูราคาและรายละเอียด ↓',
+            'hero.scroll':    'เลื่อนดู',
+            'stats.guests':   'รองรับสูงสุด',
+            'stats.bedrooms': 'ห้องนอน',
+            'stats.bathrooms':'ห้องน้ำ',
+            'stats.rating':   'คะแนนรีวิว',
+            'stats.unit.person':'คน',
+            'stats.unit.room': 'ห้อง',
+            'pricing.eyebrow':'ราคา',
+            'pricing.title':  'เลือกวันพักของคุณ',
+            'pricing.sub':    'ราคาต่อคืน — รวมค่าธรรมเนียมแล้ว',
+            'pricing.note':   '* ราคาข้างต้นเป็นราคาอ้างอิง · ยืนยันราคาจริงได้บน Airbnb',
+            'weekday.type':   'วันธรรมดา',
+            'weekday.per':    'ต่อคืน · จันทร์ – พฤหัสบดี',
+            'weekend.type':   'วันหยุด / เสาร์–อาทิตย์',
+            'weekend.badge':  'ยอดนิยม',
+            'weekend.per':    'ต่อคืน · ศุกร์ – อาทิตย์ & วันหยุดนักขัตฤกษ์',
+            'inc.1': 'รองรับสูงสุด 10 คน', 'inc.2': 'Check-in ยืดหยุ่น',
+            'inc.3': 'Check-out ก่อนเที่ยง', 'inc.4': 'WiFi · ที่จอดรถฟรี',
+            'hl.eyebrow': 'ทำไมต้องที่นี่', 'hl.title': 'สิ่งที่ทำให้ที่นี่พิเศษ',
+            'hl1.name': 'Self Check-in',
+            'hl1.desc': 'เช็คอินได้เองด้วย Smart Lock ไม่ต้องรอ เดินทางมาถึงเมื่อไรก็เข้าพักได้เลย สะดวกสบายสุดๆ',
+            'hl2.name': 'วิวภูเขา & สวน',
+            'hl2.desc': 'ดาดฟ้าพร้อมวิวภูเขาเขาใหญ่ 360° ล้อมรอบด้วยสวนเขียวชอุ่ม ถ่ายรูปสวยทุกมุม',
+            'hl3.name': 'ที่จอดรถฟรี',
+            'hl3.desc': 'มีที่จอดรถในบริเวณบ้านให้ฟรี รองรับได้หลายคัน ไม่ต้องกังวลเรื่องที่จอดเลย',
+            'gallery.eyebrow': 'ภาพบ้าน', 'gallery.title': 'สัมผัสบรรยากาศจริง',
+            'about.eyebrow': 'เกี่ยวกับที่พัก',
+            'about.title': 'หนีจากเมือง<br>มาพักใจ',
+            'about.desc': 'ฟาร์มเฮาส์สุดโปรดท่ามกลางภูเขาเขาใหญ่เที่ยง เหมาะสำหรับกลุ่ม 8–10 คน ประกอบด้วยบ้านหลักและบ้านเล็กอยู่ข้างๆ กัน บรรยากาศฟาร์มแบบเป็นธรรมชาติ',
+            'feat.1': '3 ห้องนอน · 3 ห้องน้ำ · 4 เตียง', 'feat.2': 'ดาดฟ้าพร้อมวิวภูเขา 360°',
+            'feat.3': 'พื้นที่กลางแจ้งและแคมปิ้ง', 'feat.4': 'เก็บผักสดปรุงอาหารเองได้',
+            'feat.5': 'โต๊ะยาวสำหรับจัดปาร์ตี้',
+            'am.eyebrow': 'สิ่งอำนวยความสะดวก', 'am.title': 'ครบครัน พร้อมใช้',
+            'am.sub': 'ทุกอย่างที่ต้องการอยู่ที่นี่ครบแล้ว',
+            'am.1': 'วิวสวน', 'am.2': 'วิวภูเขา', 'am.3': 'ครัวครบ', 'am.5': 'ที่จอดรถฟรี',
+            'am.7': 'คาราโอเกะ', 'am.9': 'เครื่องซักผ้า', 'am.11': 'เก็บผักสด', 'am.12': 'พื้นที่แคมปิ้ง',
+            'rv.eyebrow': 'รีวิวจากแขก', 'rv.title': 'พวกเขาพูดว่าอะไร', 'rv.count': 'จาก 25 รีวิว',
+            'rules.eyebrow': 'กฎของบ้าน', 'rules.title': 'สิ่งที่ควรรู้',
+            'rule1.title': 'Check-in ยืดหยุ่น', 'rule1.desc': 'เช็คอินได้ตลอดเวลา ด้วย Smart Lock ไม่ต้องรอเจ้าของบ้าน',
+            'rule2.title': 'Check-out ก่อนเที่ยง', 'rule2.desc': 'กรุณาเช็คเอาท์ก่อน 12:00 น. เพื่อเตรียมพร้อมให้แขกท่านต่อไป',
+            'rule3.title': 'สูงสุด 10 คน', 'rule3.desc': 'รองรับผู้เข้าพักได้สูงสุด 10 คน เพื่อความสะดวกสบายของทุกคน',
+            'loc.eyebrow': 'ที่ตั้ง', 'loc.sub': 'ใกล้อุทยานแห่งชาติเขาใหญ่ — บรรยากาศธรรมชาติ สงบ มีที่จอดรถฟรีในบริเวณบ้าน',
+            'fcta.eyebrow': 'พร้อมแล้วใช่ไหม?', 'fcta.title': 'จองเลยวันนี้',
+            'fcta.sub': 'Superhost · 4.92★ · 25 รีวิว · Wang Sai, Khao Yai',
+            'footer.copy': '© 2024 Farm to Table House @ Khao Yai — Wang Sai, Nakhon Ratchasima, Thailand',
+            'footer.link': 'ดู listing บน Airbnb',
+            'bk.eyebrow': 'ปฏิทินและการจอง', 'bk.title': 'เช็ควันว่างและจอง',
+            'bk.sub': 'เลือกวันที่ต้องการ จากนั้นกรอกข้อมูลเพื่อจองได้เลย',
+            'bk.direct': 'สนใจจอง', 'bk.direct.desc': 'ได้ราคาพิเศษ ไม่มีค่าธรรมเนียม ติดต่อตรงกับเจ้าของ', 'bk.facebook': 'ติดต่อผ่าน Facebook →',
+            'bk.leg.avail': 'ว่าง', 'bk.leg.booked': 'จองแล้ว', 'bk.leg.selected': 'วันที่เลือก',
+            'bk.modal.title': 'กรอกข้อมูลการจอง',
+            'bk.form.name': 'ชื่อ-นามสกุล', 'bk.form.phone': 'เบอร์โทรศัพท์',
+            'bk.form.email': 'อีเมล (สำหรับยืนยันการจอง)',
+            'bk.form.facebook': 'Facebook (ไม่บังคับ)',
+            'bk.form.checkin': 'วันเข้าพัก', 'bk.form.checkout': 'วันออก',
+            'bk.form.guests': 'จำนวนผู้เข้าพัก', 'bk.form.notes': 'หมายเหตุ',
+            'bk.form.optional': '(ไม่บังคับ)', 'bk.form.submit': 'ส่งคำขอจอง',
+            'bk.form.note': 'เจ้าของบ้านจะติดต่อยืนยันผ่าน Facebook หรือโทรศัพท์',
+            'bk.success.title': 'ส่งคำขอจองแล้ว!',
+            'bk.success.desc': 'เจ้าของบ้านจะติดต่อกลับเร็วๆ นี้ ขอบคุณที่สนใจ Farm to Table House',
+            'media.eyebrow': 'ถูกพูดถึงใน', 'media.title': 'สื่อและนิตยสารพูดถึงเรา',
+            'media.read': 'อ่านบทความ →', 'media.watch': 'ดูวิดีโอ →',
+            'ct.eyebrow': 'ติดต่อเจ้าของบ้าน', 'ct.title': 'พร้อมตอบทุกคำถาม',
+            'ct.label': 'โทรหาเราได้เลย', 'ct.call': 'โทรเลย', 'ct.facebook': 'Facebook Page',
+            'loc.directions': 'นำทาง Google Maps →',
+            'ch.eyebrow': 'ช่องทางการจอง', 'ch.title': 'เลือกวิธีที่สะดวกสำหรับคุณ',
+            'ch.airbnb.desc': 'ปลอดภัย มีนโยบายคุ้มครองผู้จอง ชำระเงินผ่านระบบ Airbnb',
+            'ch.airbnb.btn': 'จองบน Airbnb →',
+            'ch.fb.desc': 'ติดต่อตรงกับเจ้าของ ได้ราคาพิเศษ ตอบเร็ว',
+            'ch.fb.btn': 'ติดต่อผ่าน Facebook →',
+            'gallery.showAll': 'ดูภาพทั้งหมด (32 รูป)',
+            'gallery.modal.title': 'ภาพบ้านทั้งหมด',
+            'am.showAll': 'ดูสิ่งอำนวยความสะดวกทั้งหมด →',
+            'am.modal.title': 'สิ่งอำนวยความสะดวกทั้งหมด',
+            'gcat.all': 'ทั้งหมด', 'gcat.exterior': 'ภายนอก', 'gcat.living': 'ห้องนั่งเล่น',
+            'gcat.bedroom': 'ห้องนอน', 'gcat.kitchen': 'ครัว', 'gcat.bathroom': 'ห้องน้ำ', 'gcat.outdoor': 'กลางแจ้ง',
+            'amcat.entertainment': 'ความบันเทิง', 'amcat.kitchen': 'ครัวและห้องอาหาร',
+            'amcat.facilities': 'สิ่งอำนวยความสะดวก', 'amcat.outdoor': 'วิวและพื้นที่กลางแจ้ง',
+        },
+        en: {
+            'nav.cta':        'Book Now ↓',
+            'nav.contact':    'Contact',
+            'nav.book':       'Book on Airbnb →',
+            'hero.place':     'Mountain View Stay',
+            'hero.location':  'Pak Chong · Wang Sai',
+            'hero.reviews':   '25 Reviews',
+            'hero.sub':       'Farmhouse retreat in Khao Yai, Thailand<br>Peaceful · Mountain Views · Fully Equipped · Up to 10 Guests',
+            'hero.cta':       'View Prices & Details ↓',
+            'hero.scroll':    'Scroll',
+            'stats.guests':   'Max Guests',
+            'stats.bedrooms': 'Bedrooms',
+            'stats.bathrooms':'Bathrooms',
+            'stats.rating':   'Rating',
+            'stats.unit.person':'pax',
+            'stats.unit.room': 'rooms',
+            'pricing.eyebrow':'Pricing',
+            'pricing.title':  'Choose Your Stay',
+            'pricing.sub':    'Per night — all fees included',
+            'pricing.note':   '* Prices are indicative · Confirm exact price on Airbnb',
+            'weekday.type':   'Weekday',
+            'weekday.per':    'per night · Monday – Thursday',
+            'weekend.type':   'Weekend / Holiday',
+            'weekend.badge':  'Popular',
+            'weekend.per':    'per night · Friday – Sunday & Public Holidays',
+            'inc.1': 'Up to 10 guests', 'inc.2': 'Flexible check-in',
+            'inc.3': 'Check-out before noon', 'inc.4': 'WiFi · Free parking',
+            'hl.eyebrow': 'Why Here', 'hl.title': 'What Makes This Place Special',
+            'hl1.name': 'Self Check-in',
+            'hl1.desc': 'Check yourself in with the Smart Lock. No waiting required — arrive anytime and head straight in.',
+            'hl2.name': 'Mountain & Garden Views',
+            'hl2.desc': '360° mountain views from the rooftop, surrounded by lush green gardens — perfect for photos.',
+            'hl3.name': 'Free Parking',
+            'hl3.desc': 'On-site parking available for multiple vehicles at no extra cost. No parking worries.',
+            'gallery.eyebrow': 'Gallery', 'gallery.title': 'Experience the Atmosphere',
+            'about.eyebrow': 'About the Property',
+            'about.title': 'Escape the City,<br>Reconnect with Nature',
+            'about.desc': 'A beloved farmhouse retreat in Khao Yai Tieng mountains. Perfect for groups of 8–10, featuring a main house and a tiny house side by side in a natural farm setting.',
+            'feat.1': '3 Bedrooms · 3 Bathrooms · 4 Beds', 'feat.2': 'Rooftop with 360° Mountain Views',
+            'feat.3': 'Outdoor & Camping Space', 'feat.4': 'Pick Fresh Vegetables for Cooking',
+            'feat.5': 'Long Table for Group Dining',
+            'am.eyebrow': 'Amenities', 'am.title': 'Fully Equipped',
+            'am.sub': 'Everything you need is already here',
+            'am.1': 'Garden View', 'am.2': 'Mountain View', 'am.3': 'Full Kitchen', 'am.5': 'Free Parking',
+            'am.7': 'Karaoke', 'am.9': 'Washing Machine', 'am.11': 'Fresh Vegetables', 'am.12': 'Camping Area',
+            'rv.eyebrow': 'Guest Reviews', 'rv.title': 'What They\'re Saying', 'rv.count': 'from 25 reviews',
+            'rules.eyebrow': 'House Rules', 'rules.title': 'Good to Know',
+            'rule1.title': 'Flexible Check-in', 'rule1.desc': 'Check in anytime with the Smart Lock — no need to wait for the host.',
+            'rule2.title': 'Check-out by Noon', 'rule2.desc': 'Please check out before 12:00 PM to allow preparation for the next guests.',
+            'rule3.title': 'Max 10 Guests', 'rule3.desc': 'Maximum capacity is 10 guests to ensure everyone\'s comfort.',
+            'loc.eyebrow': 'Location', 'loc.sub': 'Near Khao Yai National Park — peaceful natural surroundings with free on-site parking.',
+            'fcta.eyebrow': 'Ready?', 'fcta.title': 'Book Today',
+            'fcta.sub': 'Superhost · 4.92★ · 25 Reviews · Wang Sai, Khao Yai',
+            'footer.copy': '© 2024 Farm to Table House @ Khao Yai — Wang Sai, Nakhon Ratchasima, Thailand',
+            'footer.link': 'View Listing on Airbnb',
+            'bk.eyebrow': 'Calendar & Booking', 'bk.title': 'Check Availability & Book',
+            'bk.sub': 'Select your dates, then fill in your details to request a booking.',
+            'bk.direct': 'I\'m Interested', 'bk.direct.desc': 'Best price, no fees, contact host directly', 'bk.facebook': 'Contact via Facebook →',
+            'bk.leg.avail': 'Available', 'bk.leg.booked': 'Booked', 'bk.leg.selected': 'Selected',
+            'bk.modal.title': 'Request a Booking',
+            'bk.form.name': 'Full Name', 'bk.form.phone': 'Phone Number',
+            'bk.form.email': 'Email (for booking confirmation)',
+            'bk.form.facebook': 'Facebook (optional)',
+            'bk.form.checkin': 'Check-in Date', 'bk.form.checkout': 'Check-out Date',
+            'bk.form.guests': 'Number of Guests', 'bk.form.notes': 'Notes',
+            'bk.form.optional': '(optional)', 'bk.form.submit': 'Send Booking Request',
+            'bk.form.note': 'The host will contact you to confirm via Facebook or phone.',
+            'bk.success.title': 'Booking Request Sent!',
+            'bk.success.desc': 'The host will be in touch shortly. Thank you for choosing Farm to Table House.',
+            'media.eyebrow': 'Featured In', 'media.title': 'As Seen in Media & Magazines',
+            'media.read': 'Read Article →', 'media.watch': 'Watch Video →',
+            'ct.eyebrow': 'Contact the Host', 'ct.title': 'Ready to Answer Your Questions',
+            'ct.label': 'Call us anytime', 'ct.call': 'Call Now', 'ct.facebook': 'Facebook Page',
+            'loc.directions': 'Get Directions →',
+            'ch.eyebrow': 'Booking Channels', 'ch.title': 'Choose How You\'d Like to Book',
+            'ch.airbnb.desc': 'Secure payment & guest protection through Airbnb\'s platform.',
+            'ch.airbnb.btn': 'Book on Airbnb →',
+            'ch.fb.desc': 'Contact the host directly for special rates and fast replies.',
+            'ch.fb.btn': 'Contact via Facebook →',
+            'gallery.showAll': 'Show all photos (32)',
+            'gallery.modal.title': 'All Photos',
+            'am.showAll': 'Show all amenities →',
+            'am.modal.title': 'All Amenities',
+            'gcat.all': 'All', 'gcat.exterior': 'Exterior', 'gcat.living': 'Living Room',
+            'gcat.bedroom': 'Bedroom', 'gcat.kitchen': 'Kitchen', 'gcat.bathroom': 'Bathroom', 'gcat.outdoor': 'Outdoor',
+            'amcat.entertainment': 'Entertainment', 'amcat.kitchen': 'Kitchen & Dining',
+            'amcat.facilities': 'Facilities', 'amcat.outdoor': 'Views & Outdoor',
+        },
+        zh: {
+            'nav.cta':        '立即预订 ↓',
+            'nav.contact':    '联系',
+            'nav.book':       '在Airbnb上预订 →',
+            'hero.place':     '山景民宿',
+            'hero.location':  '巴真 · 王赛',
+            'hero.reviews':   '25条评价',
+            'hero.sub':       '泰国考艾山中的农场民宿<br>宁静 · 山景 · 设施齐全 · 最多10位客人',
+            'hero.cta':       '查看价格与详情 ↓',
+            'hero.scroll':    '向下滚动',
+            'stats.guests':   '最多入住',
+            'stats.bedrooms': '卧室',
+            'stats.bathrooms':'浴室',
+            'stats.rating':   '综合评分',
+            'stats.unit.person':'人',
+            'stats.unit.room': '间',
+            'pricing.eyebrow':'价格',
+            'pricing.title':  '选择您的入住日期',
+            'pricing.sub':    '每晚价格 — 含所有费用',
+            'pricing.note':   '* 价格仅供参考 · 请在Airbnb上确认实际价格',
+            'weekday.type':   '工作日',
+            'weekday.per':    '每晚 · 周一 – 周四',
+            'weekend.type':   '周末 / 节假日',
+            'weekend.badge':  '热门',
+            'weekend.per':    '每晚 · 周五 – 周日及公共假期',
+            'inc.1': '最多10位客人', 'inc.2': '灵活入住',
+            'inc.3': '中午前退房', 'inc.4': 'WiFi · 免费停车',
+            'hl.eyebrow': '为什么选择这里', 'hl.title': '让这里与众不同的地方',
+            'hl1.name': '自助入住',
+            'hl1.desc': '通过智能门锁自助入住，无需等待，随时到达随时入住，非常方便。',
+            'hl2.name': '山景与花园景观',
+            'hl2.desc': '从屋顶平台可以欣赏360°考艾山全景，四周绿意盎然，每个角度都适合拍照。',
+            'hl3.name': '免费停车',
+            'hl3.desc': '院内提供多车位免费停车场，无需担心停车问题，轻松出行。',
+            'gallery.eyebrow': '房屋图片', 'gallery.title': '感受真实氛围',
+            'about.eyebrow': '关于住宿',
+            'about.title': '逃离城市，<br>回归自然',
+            'about.desc': '这是一处深受喜爱的农场民宿，坐落于泰国考艾山中。适合8–10人的团体入住，包含主屋和小屋，沉浸在自然农场氛围之中。',
+            'feat.1': '3间卧室 · 3间浴室 · 4张床', 'feat.2': '屋顶平台360°山景',
+            'feat.3': '户外空间与露营区', 'feat.4': '可采摘新鲜蔬菜自己烹饪',
+            'feat.5': '长桌适合团体聚餐',
+            'am.eyebrow': '设施', 'am.title': '设施齐全，随时可用',
+            'am.sub': '您所需的一切都已准备好',
+            'am.1': '花园景观', 'am.2': '山景', 'am.3': '完整厨房', 'am.5': '免费停车',
+            'am.7': '卡拉OK', 'am.9': '洗衣机', 'am.11': '新鲜蔬菜', 'am.12': '露营区',
+            'rv.eyebrow': '客人评价', 'rv.title': '他们怎么说', 'rv.count': '共25条评价',
+            'rules.eyebrow': '房屋规则', 'rules.title': '须知事项',
+            'rule1.title': '灵活入住', 'rule1.desc': '使用智能门锁随时入住，无需等待房东。',
+            'rule2.title': '中午前退房', 'rule2.desc': '请在12:00前退房，以便为下一位客人做好准备。',
+            'rule3.title': '最多10位客人', 'rule3.desc': '为确保所有人的舒适，最多可入住10位客人。',
+            'loc.eyebrow': '位置', 'loc.sub': '靠近考艾国家公园 — 自然环境宁静，院内提供免费停车。',
+            'fcta.eyebrow': '准备好了吗？', 'fcta.title': '立即预订',
+            'fcta.sub': '超级房东 · 4.92★ · 25条评价 · Wang Sai, Khao Yai',
+            'footer.copy': '© 2024 Farm to Table House @ Khao Yai — Wang Sai, Nakhon Ratchasima, Thailand',
+            'footer.link': '在Airbnb上查看房源',
+            'bk.eyebrow': '日历与预订', 'bk.title': '查看可用日期并预订',
+            'bk.sub': '选择您的入住日期，然后填写信息提交预订申请。',
+            'bk.direct': '我有兴趣', 'bk.direct.desc': '优惠价格，无手续费，直接联系房东', 'bk.facebook': '通过Facebook联系 →',
+            'bk.leg.avail': '可预订', 'bk.leg.booked': '已预订', 'bk.leg.selected': '已选日期',
+            'bk.modal.title': '提交预订申请',
+            'bk.form.name': '姓名', 'bk.form.phone': '手机号码',
+            'bk.form.email': '邮箱（用于预订确认）',
+            'bk.form.facebook': 'Facebook（选填）',
+            'bk.form.checkin': '入住日期', 'bk.form.checkout': '退房日期',
+            'bk.form.guests': '入住人数', 'bk.form.notes': '备注',
+            'bk.form.optional': '（选填）', 'bk.form.submit': '发送预订申请',
+            'bk.form.note': '房东将通过Facebook或电话与您确认预订。',
+            'bk.success.title': '预订申请已发送！',
+            'bk.success.desc': '房东将尽快与您联系。感谢您选择Farm to Table House。',
+            'media.eyebrow': '媒体报道', 'media.title': '媒体与杂志的介绍',
+            'media.read': '阅读文章 →', 'media.watch': '观看视频 →',
+            'ct.eyebrow': '联系房东', 'ct.title': '随时为您解答',
+            'ct.label': '欢迎来电', 'ct.call': '立即致电', 'ct.facebook': 'Facebook主页',
+            'loc.directions': '查看导航 →',
+            'ch.eyebrow': '预订渠道', 'ch.title': '选择您方便的预订方式',
+            'ch.airbnb.desc': '通过Airbnb平台安全支付，享有客人保护政策。',
+            'ch.airbnb.btn': '在Airbnb上预订 →',
+            'ch.fb.desc': '直接联系房东，享受特别优惠，回复更快捷。',
+            'ch.fb.btn': '通过Facebook联系 →',
+            'gallery.showAll': '查看全部照片（32张）',
+            'gallery.modal.title': '所有照片',
+            'am.showAll': '查看所有设施 →',
+            'am.modal.title': '所有设施',
+            'gcat.all': '全部', 'gcat.exterior': '外观', 'gcat.living': '客厅',
+            'gcat.bedroom': '卧室', 'gcat.kitchen': '厨房', 'gcat.bathroom': '浴室', 'gcat.outdoor': '户外',
+            'amcat.entertainment': '娱乐设施', 'amcat.kitchen': '厨房与餐厅',
+            'amcat.facilities': '设施', 'amcat.outdoor': '景观与户外',
+        }
+    };
+
+    let currentLang = 'th';
+
+    function toggleLangDD() {
+        const dd = document.getElementById('lang-dropdown');
+        dd.classList.toggle('open');
+    }
+    document.addEventListener('click', function(e) {
+        const dd = document.getElementById('lang-dropdown');
+        if (dd && !dd.contains(e.target)) dd.classList.remove('open');
+    });
+
+    function setLang(lang) {
+        currentLang = lang;
+        const dict = T[lang];
+
+        // Update text elements
+        document.querySelectorAll('[data-i18n]').forEach(el => {
+            const key = el.getAttribute('data-i18n');
+            if (dict[key] !== undefined) el.textContent = dict[key];
+        });
+
+        // Update HTML elements (allow <br> etc.)
+        document.querySelectorAll('[data-i18n-html]').forEach(el => {
+            const key = el.getAttribute('data-i18n-html');
+            if (dict[key] !== undefined) el.innerHTML = dict[key];
+        });
+
+        // Update lang buttons
+        document.querySelectorAll('.lang-btn').forEach(btn => {
+            btn.classList.toggle('active', btn.textContent.trim() === { th:'TH', en:'EN', zh:'中文' }[lang]);
+        });
+        // Update mobile dropdown label & active state
+        const labelMap = { th:'TH', en:'EN', zh:'中文' };
+        const ddLabel = document.getElementById('lang-dd-label');
+        if (ddLabel) ddLabel.textContent = labelMap[lang];
+        document.querySelectorAll('.lang-dd-menu button').forEach(btn => {
+            btn.classList.toggle('active', btn.textContent.startsWith(labelMap[lang]));
+        });
+
+        // Update html lang attr
+        document.documentElement.lang = { th:'th', en:'en', zh:'zh-CN' }[lang];
+
+        // Re-render calendar with new locale
+        renderCalendar();
+        // Update media quotes
+        updateMediaQuotes();
+        // Re-render modals if open
+        if (galleryOverlay && galleryOverlay.classList.contains('open')) renderGalleryModal();
+        if (amOverlay && amOverlay.classList.contains('open')) renderAmModal();
+    }
+
+    /* Apply config */
+    document.getElementById('ch-fb-link').href = CONFIG.FACEBOOK_URL;
+    document.getElementById('ct-fb-link').href = CONFIG.FACEBOOK_URL;
+
+    /* ════════════════════════════════════════
+       📰  MEDIA / PRESS — แก้ quote ได้ตรงนี้
+       ════════════════════════════════════════ */
+    const MEDIA = [
+        {
+            source: 'บ้านและสวน',
+            url: 'https://www.baanlaesuan.com/290584/houses/modern-farm-house-vegetable-retirement/',
+            type: 'article',
+            thumb: 'images/media-baanlaesuan.jpg',
+            icon: '📰',
+            accent: '#2d6a4f',
+            quote: {
+                th: '"ฟาร์มเฮาส์โมเดิร์นกลางเขาใหญ่ ที่ซึ่งการพักผ่อนผสานกับวิถีเกษตรอย่างลงตัว"',
+                en: '"A modern farmhouse in Khao Yai where rest and sustainable living blend perfectly."',
+                zh: '"考艾山中的现代农场民宿，休闲与农耕生活的完美融合。"',
+            },
+        },
+        {
+            source: 'YouTube',
+            url: 'https://www.youtube.com/watch?v=Z3SMWWEDIRk',
+            type: 'video',
+            thumb: 'https://img.youtube.com/vi/Z3SMWWEDIRk/maxresdefault.jpg',
+            accent: '#FF0000',
+            quote: {
+                th: '"บ้านพักสไตล์ฟาร์มเขาใหญ่ วิวสวย อากาศเย็น บรรยากาศดีมาก เหมาะกับทริปกลุ่มใหญ่"',
+                en: '"A stunning farm-style retreat in Khao Yai — cool breeze, great views, perfect for groups."',
+                zh: '"考艾山农场风格民宿——景色绝美，凉风习习，最适合大团体旅行。"',
+            },
+        },
+        {
+            source: 'บ้านไอเดีย',
+            url: 'https://www.banidea.com/farm-to-table-house-wardwai-architect-and-design/',
+            type: 'article',
+            thumb: 'https://www.banidea.com/wp-content/uploads/2022/10/Farm-to-table-house-Wardwai-Architect-and-design.jpeg',
+            icon: '🏠',
+            accent: '#e07b39',
+            quote: {
+                th: '"ออกแบบโดย Wardwai Architect — บ้านฟาร์มร่วมสมัยที่ภูมิทัศน์และวิถีชีวิตหลอมรวมเป็นหนึ่ง"',
+                en: '"Designed by Wardwai Architect — a contemporary farmhouse where landscape and lifestyle become one."',
+                zh: '"由Wardwai建筑设计打造——景观与生活方式融为一体的当代农舍。"',
+            },
+        },
+    ];
+
+    function renderMedia() {
+        const grid = document.getElementById('media-grid');
+        if (!grid) return;
+        grid.innerHTML = MEDIA.map((m, i) => {
+            const delay = i > 0 ? ` d${i}` : '';
+            const thumbHtml = m.thumb
+                ? `<div class="media-thumb">
+                    <img src="${m.thumb}" alt="${m.source}" loading="lazy">
+                    ${m.type === 'video' ? `<div class="media-play"><div class="media-play-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="white"><polygon points="5 3 19 12 5 21 5 3"/></svg></div></div>` : ''}
+                   </div>`
+                : '';
+            const headerHtml = `<div class="media-header" style="border-left-color:${m.accent}">
+                    <span class="media-icon">${m.icon}</span>
+                    <span class="media-src-name">${m.source}</span>
+                   </div>`;
+            const top = thumbHtml + (m.type !== 'video' ? headerHtml : '');
+            return `<a href="${m.url}" target="_blank" rel="noopener" class="media-card fu${delay}">
+                ${top}
+                <div class="media-body">
+                    <blockquote class="media-quote" data-media="${i}"></blockquote>
+                    <span class="media-link" data-i18n="${m.type === 'video' ? 'media.watch' : 'media.read'}"></span>
+                </div>
+            </a>`;
+        }).join('');
+        updateMediaQuotes();
+        document.querySelectorAll('.media-card.fu').forEach(el => io.observe(el));
+    }
+
+    function updateMediaQuotes() {
+        document.querySelectorAll('[data-media]').forEach(el => {
+            const m = MEDIA[+el.dataset.media];
+            if (m) el.textContent = m.quote[currentLang] || m.quote.th;
+        });
+    }
+
+    /* ════════════════════════════════════════
+       📅  AVAILABILITY CALENDAR
+       ════════════════════════════════════════ */
+    let bookedRanges = [];
+    let selCheckIn = null, selCheckOut = null;
+    let calOffset = 0;
+
+    const MONTHS = {
+        th: ['มกราคม','กุมภาพันธ์','มีนาคม','เมษายน','พฤษภาคม','มิถุนายน','กรกฎาคม','สิงหาคม','กันยายน','ตุลาคม','พฤศจิกายน','ธันวาคม'],
+        en: ['January','February','March','April','May','June','July','August','September','October','November','December'],
+        zh: ['一月','二月','三月','四月','五月','六月','七月','八月','九月','十月','十一月','十二月'],
+    };
+    const WDAYS = {
+        th: ['อา','จ','อ','พ','พฤ','ศ','ส'],
+        en: ['Su','Mo','Tu','We','Th','Fr','Sa'],
+        zh: ['日','一','二','三','四','五','六'],
+    };
+
+    function dStr(y, m, d) { return `${y}-${String(m+1).padStart(2,'0')}-${String(d).padStart(2,'0')}`; }
+    function isBooked(ds) { return bookedRanges.some(r => ds >= r.ci && ds < r.co); }
+    function isPast(ds) { const t = new Date(); t.setHours(0,0,0,0); return new Date(ds+'T00:00:00') < t; }
+    function inRange(ds) { return selCheckIn && selCheckOut && ds > selCheckIn && ds < selCheckOut; }
+
+    function renderCalendar() {
+        const cont = document.getElementById('cal-container');
+        if (!cont) return;
+        const ml = MONTHS[currentLang] || MONTHS.th;
+        const wl = WDAYS[currentLang] || WDAYS.th;
+        cont.innerHTML = '';
+
+        const ref = new Date(); ref.setDate(1);
+        ref.setMonth(ref.getMonth() + calOffset);
+        const yr = ref.getFullYear(), mo = ref.getMonth();
+        const fd = new Date(yr, mo, 1).getDay();
+        const dim = new Date(yr, mo + 1, 0).getDate();
+
+        const div = document.createElement('div');
+        div.className = 'cal-month';
+
+        let html = `<div class="cal-month-header">
+            <button class="cal-nav-btn" onclick="shiftCal(-1)" ${calOffset === 0 ? 'disabled style="opacity:.3;cursor:default"' : ''}>‹</button>
+            <span class="cal-month-name">${ml[mo]} ${yr}</span>
+            <button class="cal-nav-btn" onclick="shiftCal(1)">›</button>
+        </div>`;
+        html += `<div class="cal-weekdays">${wl.map(w => `<div class="cal-weekday">${w}</div>`).join('')}</div>`;
+        html += `<div class="cal-days">`;
+        for (let i = 0; i < fd; i++) html += `<div class="cal-day empty"></div>`;
+        for (let d = 1; d <= dim; d++) {
+            const ds = dStr(yr, mo, d);
+            const cls = ['cal-day'];
+            if (isPast(ds)) cls.push('past');
+            else if (isBooked(ds)) cls.push('booked');
+            if (ds === selCheckIn) { cls.push('check-in'); if (!selCheckOut) cls.push('solo'); }
+            if (ds === selCheckOut) cls.push('check-out');
+            if (inRange(ds)) cls.push('in-range');
+            const clickable = !isPast(ds) && !isBooked(ds);
+            html += `<div class="${cls.join(' ')}"${clickable ? ` onclick="pickDate('${ds}')"` : ''}>${d}</div>`;
+        }
+        html += `</div>`;
+        div.innerHTML = html;
+        cont.appendChild(div);
+
+        const st = document.getElementById('cal-status');
+        if (st) {
+            if (selCheckIn && selCheckOut) {
+                const nights = Math.round((new Date(selCheckOut) - new Date(selCheckIn)) / 86400000);
+                const msg = { th: `เลือก: ${selCheckIn} → ${selCheckOut} (${nights} คืน)`, en: `Selected: ${selCheckIn} → ${selCheckOut} (${nights} nights)`, zh: `已选：${selCheckIn} → ${selCheckOut}（${nights}晚）` };
+                st.textContent = msg[currentLang] || msg.th;
+            } else if (selCheckIn) {
+                const msg = { th: 'เลือกวันออกด้วย', en: 'Now select your check-out date', zh: '请选择退房日期' };
+                st.textContent = msg[currentLang] || msg.th;
+            } else { st.textContent = ''; }
+        }
+    }
+
+    function pickDate(ds) {
+        if (!selCheckIn || (selCheckIn && selCheckOut) || ds <= selCheckIn) {
+            selCheckIn = ds; selCheckOut = null;
+        } else {
+            let hasBooked = false;
+            const a = new Date(selCheckIn), b = new Date(ds);
+            for (let t = new Date(a); t < b; t.setDate(t.getDate() + 1)) {
+                if (isBooked(t.toISOString().slice(0,10))) { hasBooked = true; break; }
+            }
+            if (hasBooked) { selCheckIn = ds; selCheckOut = null; }
+            else selCheckOut = ds;
+        }
+        renderCalendar();
+    }
+
+    function shiftCal(dir) { calOffset = Math.max(0, calOffset + dir); renderCalendar(); }
+
+    async function fetchAvailability() {
+        if (!CONFIG.GAS_URL) return;
+        try {
+            const url = CONFIG.GAS_URL + '?action=availability';
+            const res = await fetch(url);
+            const data = await res.json();
+            bookedRanges = data
+                .filter(r => r.status !== 'Cancelled')
+                .map(r => ({ ci: r.checkIn, co: r.checkOut }));
+            renderCalendar();
+        } catch (err) { console.warn('Availability fetch error:', err); }
+    }
+
+    /* ════════════════════════════════════════
+       📝  BOOKING MODAL
+       ════════════════════════════════════════ */
+    const overlay = document.getElementById('modal-overlay');
+    const modalClose = document.getElementById('modal-close');
+    const bookingForm = document.getElementById('booking-form');
+    const formSuccess = document.getElementById('form-success');
+
+    document.getElementById('bk-direct-btn').addEventListener('click', () => {
+        if (selCheckIn) document.getElementById('bk-checkin').value = selCheckIn;
+        if (selCheckOut) document.getElementById('bk-checkout').value = selCheckOut;
+        bookingForm.style.display = '';
+        formSuccess.style.display = 'none';
+        overlay.classList.add('open');
+        document.body.style.overflow = 'hidden';
+    });
+
+    function closeModal() { overlay.classList.remove('open'); document.body.style.overflow = ''; }
+    modalClose.addEventListener('click', closeModal);
+    overlay.addEventListener('click', e => { if (e.target === overlay) closeModal(); });
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+
+    bookingForm.addEventListener('submit', async e => {
+        e.preventDefault();
+        const btn = document.getElementById('form-submit');
+        const ci = document.getElementById('bk-checkin').value;
+        const co = document.getElementById('bk-checkout').value;
+        const today = new Date().toISOString().slice(0, 10);
+
+        if (!ci || !co || ci >= co) {
+            const msg = { th: 'กรุณาเลือกวันเข้าพักและวันออกให้ถูกต้อง', en: 'Please select valid check-in and check-out dates.', zh: '请选择正确的入住和退房日期。' };
+            alert(msg[currentLang] || msg.th);
+            return;
+        }
+        if (ci < today) {
+            const msg = { th: 'ไม่สามารถจองวันในอดีตได้', en: 'Cannot book dates in the past.', zh: '无法预订过去的日期。' };
+            alert(msg[currentLang] || msg.th);
+            return;
+        }
+        const hasOverlap = bookedRanges.some(r => ci < r.co && co > r.ci);
+        if (hasOverlap) {
+            const msg = { th: 'วันที่เลือกมีการจองแล้ว กรุณาเลือกวันที่ว่างอื่น', en: 'Selected dates are already booked. Please choose different dates.', zh: '所选日期已被预订，请选择其他日期。' };
+            alert(msg[currentLang] || msg.th);
+            return;
+        }
+        btn.disabled = true;
+        const orig = btn.textContent;
+        btn.textContent = '⏳';
+
+        const payload = {
+            name:     document.getElementById('bk-name').value.trim(),
+            phone:    document.getElementById('bk-phone').value.trim(),
+            email:    document.getElementById('bk-email').value.trim(),
+            checkIn:  ci, checkOut: co,
+            guests:   document.getElementById('bk-guests').value,
+            notes:    document.getElementById('bk-notes').value.trim(),
+            facebook: document.getElementById('bk-facebook').value.trim(),
+        };
+
+        if (CONFIG.GAS_URL) {
+            try {
+                await fetch(CONFIG.GAS_URL, {
+                    method:  'POST',
+                    mode:    'no-cors',
+                    headers: { 'Content-Type': 'text/plain' },
+                    body:    JSON.stringify(payload),
+                });
+            } catch (err) { console.warn('Booking submit error:', err); }
+        }
+
+        bookingForm.style.display = 'none';
+        formSuccess.style.display = '';
+
+        bookedRanges.push({ ci: payload.checkIn, co: payload.checkOut });
+        selCheckIn = null; selCheckOut = null;
+        renderCalendar();
+
+        btn.disabled = false;
+        btn.textContent = orig;
+    });
+
+    /* ════════════════════════════════════════
+       🖼️  GALLERY DATA — จัดหมวดรูปภาพ
+       ════════════════════════════════════════ */
+    const GALLERY_CATS = [
+        {
+            id: 'exterior',
+            images: ['01','03','07','12','16','17','26','27'],
+        },
+        {
+            id: 'living',
+            images: ['04','09','10','18','20','25'],
+        },
+        {
+            id: 'bedroom',
+            images: ['13','19','21','23','30','02','14','31'],
+        },
+        {
+            id: 'kitchen',
+            images: ['05','28'],
+        },
+        {
+            id: 'bathroom',
+            images: ['11','08','24','32','15','22'],
+        },
+        {
+            id: 'outdoor',
+            images: ['06','29'],
+        },
+    ];
+
+    /* ════════════════════════════════════════
+       ✨  AMENITIES DATA — จัดหมวดสิ่งอำนวยความสะดวก
+       ════════════════════════════════════════ */
+    const AMENITY_CATS = [
+        {
+            key: 'amcat.entertainment',
+            items: [
+                { icon: '📺', th: 'TV 65" Smart TV', en: '65" Smart TV', zh: '65英寸智能电视' },
+                { icon: '🎮', th: 'PlayStation 4', en: 'PlayStation 4', zh: 'PS4游戏机' },
+                { icon: '🎬', th: 'Netflix', en: 'Netflix', zh: 'Netflix' },
+                { icon: '🎤', th: 'คาราโอเกะ', en: 'Karaoke', zh: '卡拉OK' },
+            ]
+        },
+        {
+            key: 'amcat.kitchen',
+            items: [
+                { icon: '🍳', th: 'ครัวครบครัน', en: 'Fully Equipped Kitchen', zh: '完整厨房' },
+                { icon: '🔥', th: 'เตาแก๊ส', en: 'Gas Stove', zh: '燃气灶' },
+                { icon: '❄️', th: 'ตู้เย็น', en: 'Refrigerator', zh: '冰箱' },
+                { icon: '☕', th: 'เครื่องชงกาแฟ', en: 'Coffee Maker', zh: '咖啡机' },
+                { icon: '🫙', th: 'เครื่องครัวครบ', en: 'Full Cookware', zh: '厨具齐全' },
+                { icon: '🍽️', th: 'โต๊ะยาวสำหรับปาร์ตี้', en: 'Long Dining Table', zh: '聚餐长桌' },
+            ]
+        },
+        {
+            key: 'amcat.facilities',
+            items: [
+                { icon: '📶', th: 'WiFi ความเร็วสูง', en: 'High-speed WiFi', zh: '高速WiFi' },
+                { icon: '🚗', th: 'ที่จอดรถฟรี', en: 'Free Parking', zh: '免费停车' },
+                { icon: '👕', th: 'เครื่องซักผ้า', en: 'Washing Machine', zh: '洗衣机' },
+                { icon: '🔐', th: 'Smart Lock (เช็คอินได้เอง)', en: 'Smart Lock (Self Check-in)', zh: '智能门锁（自助入住）' },
+                { icon: '❄️', th: 'เครื่องปรับอากาศ', en: 'Air Conditioning', zh: '空调' },
+                { icon: '🛏️', th: '3 ห้องนอน · 4 เตียง', en: '3 Bedrooms, 4 Beds', zh: '3间卧室4张床' },
+                { icon: '🚿', th: '3 ห้องน้ำ', en: '3 Bathrooms', zh: '3间浴室' },
+                { icon: '🧴', th: 'สบู่และแชมพู', en: 'Toiletries', zh: '洗漱用品' },
+            ]
+        },
+        {
+            key: 'amcat.outdoor',
+            items: [
+                { icon: '⛰️', th: 'วิวภูเขา 360°', en: '360° Mountain View', zh: '360°山景' },
+                { icon: '🌳', th: 'วิวสวน', en: 'Garden View', zh: '花园景观' },
+                { icon: '🌿', th: 'เก็บผักสดปรุงเอง', en: 'Fresh Vegetable Picking', zh: '采摘新鲜蔬菜' },
+                { icon: '⛺', th: 'พื้นที่แคมปิ้ง', en: 'Camping Area', zh: '露营区' },
+                { icon: '🌄', th: 'ดาดฟ้า', en: 'Rooftop Terrace', zh: '屋顶平台' },
+            ]
+        },
+    ];
+
+    /* ════════════════════════════════════════
+       🖼️  GALLERY MODAL
+       ════════════════════════════════════════ */
+    const galleryOverlay = document.getElementById('gallery-modal-overlay');
+    const galleryBody = document.getElementById('gallery-modal-body');
+    const galleryTabsEl = document.getElementById('gallery-tabs');
+    let activeGalleryTab = 'all';
+
+    function renderGalleryModal() {
+        const dict = T[currentLang] || T.th;
+
+        // Tabs
+        const tabDefs = [{ id: 'all' }, ...GALLERY_CATS];
+        galleryTabsEl.innerHTML = tabDefs.map(c => {
+            const label = dict[`gcat.${c.id}`] || c.id;
+            const count = c.id === 'all' ? 32 : (c.images ? c.images.length : 0);
+            return `<button class="gallery-tab${c.id === activeGalleryTab ? ' active' : ''}" data-tab="${c.id}" onclick="switchGalleryTab('${c.id}')">${label}${c.id !== 'all' ? ` (${count})` : ''}</button>`;
+        }).join('');
+
+        // Photo grid
+        const cats = activeGalleryTab === 'all' ? GALLERY_CATS : GALLERY_CATS.filter(c => c.id === activeGalleryTab);
+        galleryBody.innerHTML = cats.map(cat => {
+            const title = dict[`gcat.${cat.id}`] || cat.id;
+            const photos = cat.images.map((n, i) =>
+                `<div class="gallery-photo-item${i === 0 ? ' span2' : ''}" onclick="openPhoto('images/${n}.jpeg')">
+                    <img src="images/${n}.jpeg" alt="" loading="lazy">
+                </div>`
+            ).join('');
+            return `<div class="gallery-cat-section" data-cat="${cat.id}">
+                <div class="gallery-cat-title">${title}</div>
+                <div class="gallery-photo-grid">${photos}</div>
+            </div>`;
+        }).join('');
+    }
+
+    function switchGalleryTab(tab) {
+        activeGalleryTab = tab;
+        renderGalleryModal();
+    }
+
+    function openGalleryModal() {
+        activeGalleryTab = 'all';
+        renderGalleryModal();
+        galleryOverlay.classList.add('open');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeGalleryModal() {
+        galleryOverlay.classList.remove('open');
+        document.body.style.overflow = '';
+    }
+
+    function openPhoto(src) {
+        const lbOverlay = document.createElement('div');
+        lbOverlay.style.cssText = 'position:fixed;inset:0;background:rgba(0,0,0,0.96);z-index:800;display:flex;align-items:center;justify-content:center;cursor:zoom-out;';
+        lbOverlay.innerHTML = `<img src="${src}" style="max-width:95vw;max-height:95vh;object-fit:contain;border-radius:8px;">`;
+        lbOverlay.onclick = () => lbOverlay.remove();
+        document.addEventListener('keydown', function esc(e) { if (e.key === 'Escape') { lbOverlay.remove(); document.removeEventListener('keydown', esc); } });
+        document.body.appendChild(lbOverlay);
+    }
+
+    document.getElementById('open-gallery-modal').addEventListener('click', openGalleryModal);
+    document.getElementById('gallery-modal-close').addEventListener('click', closeGalleryModal);
+    galleryOverlay.addEventListener('click', e => { if (e.target === galleryOverlay) closeGalleryModal(); });
+
+    /* ════════════════════════════════════════
+       ✨  AMENITIES MODAL
+       ════════════════════════════════════════ */
+    const amOverlay = document.getElementById('am-modal-overlay');
+    const amBody = document.getElementById('am-modal-body');
+
+    function renderAmModal() {
+        const dict = T[currentLang] || T.th;
+        amBody.innerHTML = AMENITY_CATS.map(cat => {
+            const title = dict[cat.key] || cat.key;
+            const items = cat.items.map(item => {
+                const name = item[currentLang] || item.th;
+                return `<div class="am-cat-item"><span class="am-cat-icon">${item.icon}</span><span class="am-cat-name">${name}</span></div>`;
+            }).join('');
+            return `<div class="am-cat-block">
+                <div class="am-cat-block-title">${title}</div>
+                <div class="am-cat-list">${items}</div>
+            </div>`;
+        }).join('');
+    }
+
+    function openAmModal() { renderAmModal(); amOverlay.classList.add('open'); document.body.style.overflow = 'hidden'; }
+    function closeAmModal() { amOverlay.classList.remove('open'); document.body.style.overflow = ''; }
+
+    document.getElementById('open-am-modal').addEventListener('click', openAmModal);
+    document.getElementById('am-modal-close').addEventListener('click', closeAmModal);
+    amOverlay.addEventListener('click', e => { if (e.target === amOverlay) closeAmModal(); });
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') { closeGalleryModal(); closeAmModal(); } });
+
+    /* ── Fade-up on scroll ── */
+    const io = new IntersectionObserver((entries) => {
+        entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('vis'); });
+    }, { threshold: 0.1, rootMargin: '0px 0px -60px 0px' });
+    document.querySelectorAll('.fu').forEach(el => io.observe(el));
+
+    /* Init */
+    renderCalendar();
+    fetchAvailability();
+    renderMedia();
+
+    /* ── Nav scroll ── */
+    const nav = document.getElementById('main-nav');
+    function updateNav() {
+        nav.classList.toggle('over-hero', window.scrollY < window.innerHeight * 0.85);
+    }
+    window.addEventListener('scroll', updateNav, { passive: true });
+    updateNav();
+</script>
+</body>
+</html>
