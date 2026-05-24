@@ -1,0 +1,8 @@
+# Private backend — contains API keys and credentials. NEVER commit this.
+google-apps-script.js
+
+# macOS
+.DS_Store
+
+# Claude IDE
+.claude/
