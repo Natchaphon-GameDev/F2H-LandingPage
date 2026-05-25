@@ -82,7 +82,7 @@ syncAirbnbToSheet (every 6h) → also calls syncDirectToCalendar at the end
 
 **Deployed site**: https://natchaphon-gamedev.github.io/F2H-LandingPage/
 
-**Latest GAS deployment**: `AKfycbxtUALEd-6Zsmye0Y40iz3jjs2LQpgY63dA_WW0AOhFBY9uuCg8Kw42BM-NVLytcPDFaw`
+**Latest GAS deployment**: `AKfycbxoe7qkdrrBXeKOVbjbwIi4pUuqcX33lzDe-uM4hIKR59OS71cNg-9IsXWSMyYx-fK3Ng`
 
 ## Google Calendar (Airbnb blocking)
 
